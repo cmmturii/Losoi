@@ -292,7 +292,7 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
   /* Override desktop fixed layout for mobile */
   html,body{height:auto!important;overflow:auto!important;}
   body{display:block!important;}
-  .stage{height:auto!important;overflow:visible!important;padding-bottom:60px;}
+  .stage{height:auto!important;overflow:visible!important;padding-top:50px;}
   .pane{position:relative!important;inset:auto!important;display:none;}
   .pane.on{display:block!important;}
 
@@ -325,16 +325,15 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
   .room-list{display:none!important;}
   .rd-wrap{display:none!important;}
   .mob-room-grid{display:grid!important;grid-template-columns:1fr;gap:0;padding:0;}
-  .mob-room-card{background:#fff;overflow:hidden;cursor:pointer;position:relative;border-bottom:0.5px solid rgba(26,20,9,0.08);}
+  .mob-room-card{background:var(--cream);overflow:hidden;border-bottom:2px solid rgba(196,149,42,0.15);}
   .mob-room-card-img{position:relative;overflow:hidden;}
-  .mob-room-card img{width:100%;height:52vw;object-fit:cover;display:block;transition:transform 0.4s;}
-  .mob-room-card:active img{transform:scale(1.03);}
-  .mob-room-card-ov{position:absolute;bottom:0;left:0;right:0;padding:28px 16px 12px;background:linear-gradient(to top,rgba(28,20,9,0.88),transparent);z-index:2;}
-  .mob-room-cat{font-size:8px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold2);margin-bottom:3px;}
-  .mob-room-name{font-family:"Cormorant Garamond",serif;font-size:22px;font-weight:300;color:#fff;line-height:1.1;}
-  .mob-room-body-row{display:flex;align-items:center;justify-content:space-between;padding:10px 16px 12px;background:var(--cream);}
-  .mob-room-price{font-size:12px;color:var(--stone);font-weight:300;}
-  .mob-room-book{background:var(--gold);color:var(--ink);font-family:"Outfit",sans-serif;font-size:9px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:8px 18px;border:none;cursor:pointer;}
+  .mob-room-card img{width:100%;height:70vw;object-fit:cover;display:block;}
+  .mob-room-card-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(14,8,2,0.92) 0%,rgba(14,8,2,0.3) 50%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:20px 18px 14px;}
+  .mob-room-cat{font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold2);margin-bottom:5px;}
+  .mob-room-name{font-family:"Cormorant Garamond",serif;font-size:28px;font-weight:300;color:#fff;line-height:1.1;}
+  .mob-room-body-row{display:flex;align-items:center;justify-content:space-between;padding:12px 18px 14px;background:var(--ink);}
+  .mob-room-price{font-size:12px;color:rgba(249,244,232,0.55);font-weight:300;}
+  .mob-room-book{background:var(--gold);color:var(--ink);font-family:"Outfit",sans-serif;font-size:9px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:9px 20px;border:none;cursor:pointer;white-space:nowrap;}
 
   /* GALLERY */
   #gallery.on{display:block!important;}
@@ -358,7 +357,7 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
   .ev-hero-tag{font-size:8px;margin-bottom:0;}
   .ev-hero-h{font-size:16px;white-space:normal;line-height:1.2;}
   .ev-hero-p{display:none;}
-  .ev-body{padding:14px 14px 80px;}
+  .ev-body{padding:14px 14px 20px;}
   .ev-grid{grid-template-columns:1fr;gap:12px;}
   .ev-card-img{height:150px;}
   .ev-form-wrap{padding:16px 14px;}
@@ -370,7 +369,7 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
   .split-book{display:block!important;height:auto;}
   .dark-side{padding:24px 20px;}
   .bl-t{font-size:26px;}
-  .light-side{padding:20px 16px 80px;}
+  .light-side{padding:20px 16px 20px;}
   .bf-grid{grid-template-columns:1fr;}
   .bf-f.s2{grid-column:span 1;}
   .bf-total{flex-direction:column;gap:8px;align-items:flex-start;}
@@ -379,11 +378,10 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
   #about.on{display:block!important;}
   .split-2{display:block!important;height:auto;}
   .split-2>div:first-child{height:220px;}
-  .mist-side{padding:24px 20px 80px;}
+  .mist-side{padding:24px 20px 20px;}
   .at-vals{grid-template-columns:1fr 1fr;}
 
-  /* WA button above bottom nav */
-  .wa{bottom:68px;}
+  .wa{bottom:18px;}
 }
 
 /* Show mob-nav only on mobile */
@@ -396,7 +394,7 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
 .mob-nav{position:fixed;bottom:0;left:0;right:0;z-index:9998;background:var(--ink);border-top:0.5px solid rgba(196,149,42,0.25);height:58px;}
 .mob-tab{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;cursor:pointer;border:none;border-top:2px solid transparent;background:none;color:rgba(249,244,232,0.38);font-family:'Outfit',sans-serif;font-size:8px;letter-spacing:0.06em;text-transform:uppercase;transition:all 0.2s;padding:0 2px;}
 .mob-tab svg{width:20px;height:20px;transition:all 0.2s;}
-.mob-tab.on{color:var(--gold);border-top-color:var(--gold);}
+.mob-tab.on{color:var(--gold);border-bottom-color:var(--gold);}
 .mob-tab.on svg{stroke:var(--gold);}
 .mob-tab:active{opacity:0.7;}
 </style>
@@ -471,7 +469,6 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
     <div class="hero-stats">
       <div><div class="sv">50</div><div class="sl">Acres</div></div>
       <div><div class="sv">9</div><div class="sl">Room Types</div></div>
-      <div><div class="sv">4.9&#9733;</div><div class="sl">Rating</div></div>
       <div><div class="sv">500+</div><div class="sl">Happy Guests</div></div>
     </div>
   </div>
@@ -542,9 +539,9 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
   </div>
   <!-- MOBILE ROOM CARDS — shown only on mobile -->
   <div class="mob-room-grid" style="display:none;">
-    <div style="grid-column:span 2;padding:4px 0 8px;">
-      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--ink);">Our Rooms</div>
-      <div style="font-size:11px;color:var(--stone);margin-top:2px;">9 unique stays · Tap any room to book</div>
+    <div style="padding:16px 18px 12px;background:var(--mist);border-bottom:0.5px solid rgba(26,20,9,0.08);">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:var(--ink);">Our Rooms</div>
+      <div style="font-size:11px;color:var(--stone);margin-top:3px;letter-spacing:0.04em;">9 unique stays · All ensuite · Swipe to explore</div>
     </div>
     <div class="mob-room-card">
       <div class="mob-room-card-img">
