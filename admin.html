@@ -1112,16 +1112,8 @@ function doLogin(){
   document.getElementById('tnRole').textContent={admin:'Administrator',receptionist:'Receptionist'}[role];
   document.getElementById('sbUser').textContent=user.charAt(0).toUpperCase()+user.slice(1)+' ('+role+')';
   if(role==='receptionist'){
-    // Hide admin-only sidebar sections
     document.getElementById('adminOnly').style.display='none';
-    // Change sidebar badge colors for receptionist
     document.querySelectorAll('.sb-badge').forEach(b=>b.style.background='var(--gold)');
-    // Add receptionist banner
-    const banner=document.createElement('div');
-    banner.id='recBanner';
-    banner.style.cssText='background:#FEF9EE;border-bottom:0.5px solid rgba(196,149,42,0.25);padding:7px 24px;font-size:11px;color:var(--stone);flex-shrink:0;';
-    banner.innerHTML='Logged in as <strong>Receptionist</strong> — Revenue, Staff Management and Settings are restricted to Administrators only.';
-    document.getElementById('appBody').parentNode.insertBefore(banner, document.getElementById('appBody'));
   }
   updateClock();
   setInterval(updateClock,1000);
@@ -1137,9 +1129,6 @@ function doLogout(){
   document.getElementById('loginScreen').style.display='flex';
   document.getElementById('topNav').style.display='none';
   document.getElementById('appBody').style.display='none';
-  const banner=document.getElementById('recBanner');
-  if(banner)banner.remove();
-  // Restore adminOnly section for next login
   document.getElementById('adminOnly').style.display='block';
   document.getElementById('loginPass').value='';
   document.getElementById('loginUser').value='';
