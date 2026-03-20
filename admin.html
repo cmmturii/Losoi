@@ -104,7 +104,7 @@ body{font-family:'Outfit',sans-serif;background:#F5F5F0;color:var(--ink);display
 .btn-secondary:hover{border-color:var(--gold);}
 
 /* STAT CARDS */
-.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px;}
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:20px;}
 .stat-card{background:#fff;padding:18px 20px;border:0.5px solid rgba(26,20,9,0.06);}
 .sc-label{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone);margin-bottom:6px;}
 .sc-val{font-size:26px;font-weight:600;color:var(--ink);line-height:1;}
@@ -283,6 +283,122 @@ body{font-family:'Outfit',sans-serif;background:#F5F5F0;color:var(--ink);display
 .wa-preview{background:#ECF3E8;border:0.5px solid rgba(61,82,40,0.2);padding:14px 16px;font-size:13px;color:var(--ink);line-height:1.7;margin-top:12px;position:relative;}
 .wa-preview::before{content:'WhatsApp Preview';position:absolute;top:-9px;left:12px;background:#ECF3E8;padding:0 6px;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sage);}
 
+/* ===== MOBILE RESPONSIVE — ADMIN ===== */
+@media(max-width:768px){
+  /* Layout */
+  html,body{overflow:auto;}
+  #topNav{padding:0 14px;height:54px;}
+  .tn-logo{font-size:14px;}
+  .tn-badge{display:none;}
+  .tn-role{display:none;}
+  .tn-time{display:none;}
+  .tn-user{font-size:11px;}
+  .tn-logout{font-size:9px;padding:4px 8px;}
+  #appBody{flex-direction:column;overflow:auto;height:auto;}
+
+  /* Sidebar becomes top horizontal scrollable bar */
+  #sidebar{width:100%;min-width:0;height:auto;border-right:none;border-bottom:0.5px solid rgba(26,20,9,0.1);flex-direction:column;overflow:visible;}
+  .sb-section{padding:6px 0 4px;}
+  .sb-section-label{font-size:7px;padding:0 12px;margin-bottom:3px;}
+  .sb-items-row{display:flex;overflow-x:auto;padding:0 8px 6px;gap:4px;-webkit-overflow-scrolling:touch;}
+  .sb-items-row::-webkit-scrollbar{display:none;}
+  .sb-item{padding:6px 10px;font-size:10px;border-left:none;border-bottom:2px solid transparent;white-space:nowrap;flex-shrink:0;}
+  .sb-item.on{border-left:none;border-bottom-color:var(--gold);background:#FEF9EE;}
+  .sb-footer{display:none;}
+  .sb-badge{font-size:8px;padding:1px 4px;min-width:14px;}
+
+  /* Main content */
+  #main{padding:14px;overflow:auto;min-height:60vh;}
+
+  /* Page headers */
+  .page-hd{flex-direction:column;gap:10px;align-items:flex-start;margin-bottom:14px;}
+  .page-title{font-size:16px;}
+  .page-sub{font-size:11px;}
+  .page-actions{display:flex;flex-wrap:wrap;gap:6px;width:100%;}
+  .page-actions .btn-primary,.page-actions .btn-secondary{font-size:10px;padding:7px 12px;}
+
+  /* Stat cards */
+  .stats-row{grid-template-columns:1fr 1fr!important;gap:8px;margin-bottom:14px;}
+  .stat-card{padding:12px 14px;}
+  .sc-val{font-size:20px;}
+  .sc-label{font-size:9px;}
+
+  /* Tables — make scrollable */
+  .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:14px;}
+  .tbl{min-width:600px;font-size:11px;}
+  .tbl th{font-size:8px;padding:7px 8px;}
+  .tbl td{padding:8px;}
+  .tbl-action{font-size:9px;padding:3px 7px;}
+  .table-head{flex-direction:column;gap:6px;align-items:flex-start;padding:10px 14px;}
+  .table-title{font-size:12px;}
+  .table-filters{flex-wrap:wrap;gap:4px;}
+  .tf{font-size:9px;padding:4px 8px;}
+
+  /* Search bar */
+  .search-bar{flex-direction:column;gap:6px;}
+  .search-input,.search-sel{width:100%;font-size:12px;}
+
+  /* Calendar */
+  .cal-wrap{padding:12px;}
+  .cal-day{min-height:44px;padding:4px;}
+  .cal-day-num{font-size:9px;}
+  .cal-booking{font-size:7px;padding:1px 3px;}
+  .cal-title{font-size:13px;}
+
+  /* Revenue */
+  .rev-grid{grid-template-columns:1fr;gap:10px;}
+  .rev-card{padding:14px 16px;}
+  .bar-label{font-size:10px;width:90px;}
+  .bar-val{font-size:10px;}
+
+  /* Modals */
+  .modal{width:94vw;max-width:100%;margin:0 10px;}
+  .modal-row{grid-template-columns:1fr;}
+  .modal-field.full{grid-column:span 1;}
+  .modal-body{padding:14px;}
+  .modal-hd{padding:12px 14px;}
+  .modal-foot{padding:10px 14px;gap:6px;}
+
+  /* Invoice */
+  .inv-wrap{padding:16px;}
+  .inv-header{flex-direction:column;gap:10px;}
+  .inv-meta{text-align:left;}
+  .inv-parties{grid-template-columns:1fr;gap:10px;}
+  .inv-totals-box{width:100%;}
+
+  /* Briefing */
+  .brief-grid{grid-template-columns:1fr;gap:10px;}
+
+  /* Guest cards */
+  .guest-card{flex-direction:column;align-items:flex-start;gap:8px;}
+  .guest-actions{flex-wrap:wrap;gap:5px;}
+
+  /* Settings */
+  .settings-section{padding:14px;}
+  .modal-row .modal-field{margin-bottom:8px;}
+  .ss-row{flex-direction:row;align-items:center;}
+
+  /* Notification panel */
+  .notif-panel{width:94vw;right:8px;top:60px;}
+
+  /* Broadcast */
+  .bc-template{padding:10px 12px;}
+
+  /* Reports grid */
+  #pg-revenue .stats-row{grid-template-columns:1fr 1fr!important;}
+  [style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr!important;}
+}
+
+/* Sidebar mobile restructure */
+@media(max-width:768px){
+  #sidebar{display:block;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;}
+  #sidebar .sb-section{display:inline-flex;flex-direction:row;align-items:center;gap:2px;padding:8px 6px;vertical-align:top;}
+  #sidebar .sb-section-label{display:none;}
+  #sidebar .sb-footer{display:none;}
+  #sidebar .sb-item{display:inline-flex;flex-direction:row;white-space:nowrap;padding:7px 12px;gap:6px;border-left:none;border-bottom:2px solid transparent;font-size:11px;}
+  #sidebar .sb-item.on{border-bottom-color:var(--gold);background:#FEF9EE;}
+  #sidebar .sb-icon{font-size:13px;}
+}
 .hidden{display:none!important;}
 </style>
 </head>
@@ -604,7 +720,7 @@ body{font-family:'Outfit',sans-serif;background:#F5F5F0;color:var(--ink);display
       <!-- DOWNLOAD REPORTS SECTION -->
       <div class="table-wrap" style="margin-bottom:20px;">
         <div class="table-head"><div class="table-title">Download Reports</div><div style="font-size:11px;color:var(--stone);">Click any report to download as CSV or print as PDF</div></div>
-        <div style="padding:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+        <div style="padding:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;">
 
           <div style="background:#F9F9F7;border:0.5px solid rgba(26,20,9,0.08);padding:18px;">
             <div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:4px;">📋 All Bookings Report</div>
@@ -943,7 +1059,7 @@ body{font-family:'Outfit',sans-serif;background:#F5F5F0;color:var(--ink);display
       <div class="page-hd">
         <div><div class="page-title">WhatsApp Broadcast</div><div class="page-sub">Send promotional messages to past guests — Admin only</div></div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
         <div>
           <div class="table-wrap" style="margin-bottom:14px;">
             <div class="table-head"><div class="table-title">Select Audience</div></div>
