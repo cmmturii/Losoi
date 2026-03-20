@@ -272,14 +272,14 @@ body{display:flex;flex-direction:column;}
   .mob-nav{display:flex!important;}
 
   /* Body / stage */
-  html,body{height:auto!important;overflow:auto!important;}
+  html,body{min-height:100vh!important;overflow:auto!important;background-color: #1a150e;}
   body{display:block!important;}
-  .stage{height:auto!important;overflow:visible!important;padding-top:84px;}
+  .stage{min-height:100vh!important;overflow:visible!important;padding-top:84px;}
   .pane{position:relative!important;inset:auto!important;display:none!important;}
   .pane.on{display:block!important;}
 
   /* HOME */
-  #home.on{display:block!important;}
+  #home.on{display:block!important;min-height: 100vh;}
   .hero{height:80vw;min-height:380px;}
   .hero-stats{display:none!important;}
   .hero-txt{padding:0 20px 60px;}
