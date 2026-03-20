@@ -16,7 +16,7 @@ html,body{height:100%;overflow:hidden;font-family:'Outfit',sans-serif;background
 body{display:flex;flex-direction:column;}
 
 /* NAV */
-nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-content:space-between;padding:0 36px;flex-shrink:0;}
+nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-content:space-between;padding:0 36px;flex-shrink:0;}@media(max-width:768px){nav{display:none;}}
 .logo{font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--cream);}
 .logo b{color:var(--gold);}
 .nav-tabs{display:flex;}
@@ -292,7 +292,7 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
   /* Override desktop fixed layout for mobile */
   html,body{height:auto!important;overflow:auto!important;}
   body{display:block!important;}
-  .stage{height:auto!important;overflow:visible!important;padding-top:50px;}
+  .stage{height:auto!important;overflow:visible!important;padding-top:54px;}
   .pane{position:relative!important;inset:auto!important;display:none;}
   .pane.on{display:block!important;}
 
@@ -390,7 +390,7 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
   html,body{height:100%;overflow:hidden;}
 }
 /* Mobile nav base style */
-.mob-nav{position:fixed;top:54px;left:0;right:0;z-index:9998;background:#1C1409;border-bottom:0.5px solid rgba(196,149,42,0.25);height:50px;}
+.mob-nav{position:fixed;top:0px;left:0;right:0;z-index:9998;background:#1C1409;border-bottom:0.5px solid rgba(196,149,42,0.25);height:50px;}
 .mob-tab{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer;border:none;border-bottom:2px solid transparent;background:none;color:rgba(249,244,232,0.38);font-family:'Outfit',sans-serif;font-size:7px;letter-spacing:0.06em;text-transform:uppercase;transition:all 0.2s;padding:0 2px;}
 .mob-tab svg{width:19px;height:19px;transition:all 0.2s;}
 .mob-tab.on{color:var(--gold);border-bottom-color:var(--gold);}
