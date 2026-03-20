@@ -306,32 +306,36 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
   .pill{font-size:9px;padding:3px 8px;}
   .hero-btns{flex-direction:column;gap:8px;}
   .btn-g,.btn-o{width:100%;text-align:center;padding:12px;}
-  .hero-stats{bottom:20px;right:16px;gap:18px;}
+  .hero-stats{bottom:80px;right:12px;gap:14px;flex-direction:column;align-items:flex-end;}
+  .sv{font-size:18px;}
   .sv{font-size:20px;}
   .sl{font-size:7px;}
   .infobar{flex-wrap:wrap;height:auto;padding:10px 0;}
   .ib{min-width:50%;border-right:none;border-bottom:0.5px solid rgba(196,149,42,0.1);padding:8px 14px;}
   .ib-btn{width:100%;padding:12px;text-align:center;}
 
-  /* ROOMS */
+  /* ROOMS - card grid on mobile */
   #rooms.on{display:block!important;}
   .split-rooms{display:block!important;height:auto;}
-  .room-list{max-height:180px;overflow-y:auto;border-right:none;border-bottom:0.5px solid rgba(26,20,9,0.1);}
-  .ri{padding:8px 14px;gap:8px;}
-  .ri img{width:40px;height:32px;}
-  .ri-n{font-size:12px;}
-  .ri-p{font-size:10px;}
-  .rd-wrap{height:auto;}
-  .rd-sl{height:220px;}
-  .rd-body{padding:12px 16px;}
-  .rd-grid{grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;}
-  .rd-bar{padding:10px 16px;flex-wrap:wrap;gap:8px;}
+  /* Hide the desktop split layout, show mobile cards instead */
+  .room-list{display:none!important;}
+  .rd-wrap{display:none!important;}
+  .mob-room-grid{display:grid!important;grid-template-columns:1fr 1fr;gap:10px;padding:14px;}
+  .mob-room-card{background:#fff;overflow:hidden;cursor:pointer;border:0.5px solid rgba(26,20,9,0.08);}
+  .mob-room-card img{width:100%;height:110px;object-fit:cover;display:block;}
+  .mob-room-card-body{padding:8px 10px;}
+  .mob-room-cat{font-size:8px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:2px;}
+  .mob-room-name{font-size:12px;font-weight:500;color:var(--ink);margin-bottom:2px;line-height:1.3;}
+  .mob-room-price{font-size:10px;color:var(--stone);}
+  .mob-room-book{width:100%;background:var(--ink);color:var(--cream);font-family:"Outfit",sans-serif;font-size:9px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:7px;border:none;cursor:pointer;margin-top:6px;}
 
   /* GALLERY */
   #gallery.on{display:block!important;}
-  .gal-main{height:55vw;min-height:220px;}
-  .gal-side{max-height:200px;overflow-y:auto;}
-  .gal-thumbs{grid-template-columns:repeat(4,1fr);gap:4px;padding:6px;}
+  .gal-main{height:62vw;min-height:240px;}
+  .gal-side{max-height:none;overflow-y:visible;background:var(--ink);}
+  .gal-side-h{padding:10px 14px 8px;}
+  .gal-thumbs{grid-template-columns:repeat(3,1fr);gap:3px;padding:4px;}
+  .gth{aspect-ratio:1;}
 
   /* MENU */
   #menu.on{display:block!important;}
@@ -341,8 +345,16 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
 
   /* EVENTS */
   #events.on{display:block!important;}
-  .ev-body{padding:16px 16px 80px;}
-  .ev-grid{grid-template-columns:1fr;gap:14px;}
+  .ev-hero{height:72px;}
+  .ev-hero-txt{flex-direction:column;align-items:flex-start;gap:2px;padding:0 18px;justify-content:center;}
+  .ev-hero-div{display:none;}
+  .ev-hero-tag{font-size:8px;margin-bottom:0;}
+  .ev-hero-h{font-size:16px;white-space:normal;line-height:1.2;}
+  .ev-hero-p{display:none;}
+  .ev-body{padding:14px 14px 80px;}
+  .ev-grid{grid-template-columns:1fr;gap:12px;}
+  .ev-card-img{height:150px;}
+  .ev-form-wrap{padding:16px 14px;}
   .ev-form-grid{grid-template-columns:1fr;gap:10px;}
   .ef-field.span2{grid-column:span 1;}
 
@@ -393,12 +405,18 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
 
 <!-- MOBILE BOTTOM NAV -->
 <div class="mob-nav">
-  <button class="mob-tab on" onclick="go('home')"><span class="mi">🏠</span>Home</button>
-  <button class="mob-tab" onclick="go('rooms')"><span class="mi">🛏</span>Rooms</button>
-  <button class="mob-tab" onclick="go('gallery')"><span class="mi">🖼</span>Gallery</button>
-  <button class="mob-tab" onclick="go('menu')"><span class="mi">🍽</span>Menu</button>
-  <button class="mob-tab" onclick="go('events')"><span class="mi">🎪</span>Events</button>
-  <button class="mob-tab" onclick="go('about')"><span class="mi">ℹ</span>About</button>
+  <button class="mob-tab on" onclick="go('home')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</button>
+  <button class="mob-tab" onclick="go('rooms')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9V19h20V9"/><path d="M2 9a5 5 0 015-5h10a5 5 0 015 5"/><path d="M7 14h.01M12 14h.01M17 14h.01"/><rect x="6" y="11" width="12" height="6" rx="1"/></svg>Rooms</button>
+  <button class="mob-tab" onclick="go('gallery')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>Gallery</button>
+  <button class="mob-tab" onclick="go('menu')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>Menu</button>
+  <button class="mob-tab" onclick="go('events')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>Events</button>
+  <button class="mob-tab" onclick="go('about')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>About</button>
   <button class="mob-tab" onclick="go('book')"><span class="mi">📅</span>Book</button>
 </div>
 
@@ -488,6 +506,22 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
         <button class="rd-bb" onclick="go('book')">Book This Room &#8599;</button>
       </div>
     </div>
+  </div>
+  <!-- MOBILE ROOM CARDS — shown only on mobile -->
+  <div class="mob-room-grid" style="display:none;">
+    <div style="grid-column:span 2;padding:4px 0 8px;">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--ink);">Our Rooms</div>
+      <div style="font-size:11px;color:var(--stone);margin-top:2px;">9 unique stays · Tap any room to book</div>
+    </div>
+    <div class="mob-room-card" onclick="go('book')"><img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&q=80" alt="Safari Tent"><div class="mob-room-card-body"><div class="mob-room-cat">Glamping</div><div class="mob-room-name">Luxury Safari Tent</div><div class="mob-room-price">From Ksh 8,000/night</div><button class="mob-room-book">Book Now</button></div></div>
+    <div class="mob-room-card" onclick="go('book')"><img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=400&q=80" alt="Kifaru"><div class="mob-room-card-body"><div class="mob-room-cat">Cottage</div><div class="mob-room-name">Kifaru Cottage</div><div class="mob-room-price">From Ksh 8,000/night</div><button class="mob-room-book">Book Now</button></div></div>
+    <div class="mob-room-card" onclick="go('book')"><img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=400&q=80" alt="Executive"><div class="mob-room-card-body"><div class="mob-room-cat">Suite</div><div class="mob-room-name">Executive Room</div><div class="mob-room-price">From Ksh 10,000/night</div><button class="mob-room-book">Book Now</button></div></div>
+    <div class="mob-room-card" onclick="go('book')"><img src="https://images.unsplash.com/photo-1602002418082-a4443e081dd1?w=400&q=80" alt="Africana"><div class="mob-room-card-body"><div class="mob-room-cat">Suite · 4 Bed</div><div class="mob-room-name">Africana Suite</div><div class="mob-room-price">From Ksh 8,000/person</div><button class="mob-room-book">Book Now</button></div></div>
+    <div class="mob-room-card" onclick="go('book')"><img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=400&q=80" alt="Makuti"><div class="mob-room-card-body"><div class="mob-room-cat">Swahili Style</div><div class="mob-room-name">Makuti Room</div><div class="mob-room-price">From Ksh 8,000/night</div><button class="mob-room-book">Book Now</button></div></div>
+    <div class="mob-room-card" onclick="go('book')"><img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=400&q=80" alt="Vintage"><div class="mob-room-card-body"><div class="mob-room-cat">Cottage · 2 Bed</div><div class="mob-room-name">Cottage Vintage</div><div class="mob-room-price">From Ksh 8,000/night</div><button class="mob-room-book">Book Now</button></div></div>
+    <div class="mob-room-card" onclick="go('book')"><img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=400&q=80" alt="Deluxe"><div class="mob-room-card-body"><div class="mob-room-cat">Room</div><div class="mob-room-name">Deluxe Room</div><div class="mob-room-price">From Ksh 8,000/night</div><button class="mob-room-book">Book Now</button></div></div>
+    <div class="mob-room-card" onclick="go('book')"><img src="https://images.unsplash.com/photo-1600011689032-8b628b8a8747?w=400&q=80" alt="Classic"><div class="mob-room-card-body"><div class="mob-room-cat">Cottage · 1 Bed</div><div class="mob-room-name">Cottage Classic</div><div class="mob-room-price">From Ksh 8,000/night</div><button class="mob-room-book">Book Now</button></div></div>
+    <div class="mob-room-card" onclick="go('book')"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&q=80" alt="Fig Tree"><div class="mob-room-card-body"><div class="mob-room-cat">Cottage · 2 Bed</div><div class="mob-room-name">Cottage Fig Tree</div><div class="mob-room-price">From Ksh 8,000/night</div><button class="mob-room-book">Book Now</button></div></div>
   </div>
 </div>
 
@@ -1010,8 +1044,9 @@ function go(id){
   if(id==='home')startHero();
   if(id==='rooms'){
     startRd(ROOMS[0].imgs);
-    const sel=document.getElementById('rdPkg');
-    sel.innerHTML=ROOMS[0].pkgs.map(p=>`<option value="${p.rate}">${p.label} — Ksh ${p.rate.toLocaleString()}/night</option>`).join('');
+    const isMob = window.innerWidth <= 768;
+    const grid = document.querySelector('.mob-room-grid');
+    if(grid) grid.style.display = isMob ? 'grid' : 'none';
   }
   if(id==='gallery')startGal(GAL);
   if(id==='menu')startMenu(MENU);
