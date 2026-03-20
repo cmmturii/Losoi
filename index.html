@@ -1,4 +1,3 @@
-<!-- LOISOI v7 - Nav Top, Rooms Full Width, No Ratings - 21 Mar 2026 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,10 +12,10 @@
   --ink:#1C1409;--gold:#C4952A;--gold2:#E8C060;
   --cream:#F9F4E8;--sage:#3D5228;--stone:#7A6A52;--mist:#F2EBD9;
 }
+
+/* ── DESKTOP LAYOUT ─────────────────────────────────────────────────────── */
 html,body{height:100%;overflow:hidden;font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);}
 body{display:flex;flex-direction:column;}
-
-/* NAV */
 nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-content:space-between;padding:0 36px;flex-shrink:0;}
 .logo{font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--cream);}
 .logo b{color:var(--gold);}
@@ -26,13 +25,11 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
 .tab.on{color:var(--gold);border-bottom-color:var(--gold);}
 .nav-btn{background:var(--gold);color:var(--ink);font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:8px 18px;border:none;cursor:pointer;}
 .nav-btn:hover{background:var(--gold2);}
-
-/* PANELS — each fills remaining height, fully isolated */
 .stage{flex:1;min-height:0;position:relative;}
 .pane{position:absolute;inset:0;display:none;background:var(--cream);}
 .pane.on{display:flex;flex-direction:column;}
 
-/* ===== HOME ===== */
+/* HOME */
 #home{flex-direction:column;}
 .hero{flex:1;min-height:0;position:relative;overflow:hidden;}
 .hero .swiper,.hero .swiper-slide{width:100%;height:100%;}
@@ -54,13 +51,11 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
 .hero-stats{position:absolute;bottom:64px;right:72px;z-index:3;display:flex;gap:38px;}
 .sv{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--gold2);line-height:1;text-shadow:0 1px 8px rgba(0,0,0,0.4);}
 .sl{font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.32);margin-top:4px;}
-/* hero swiper controls */
 .hero .swiper-button-next,.hero .swiper-button-prev{color:rgba(255,255,255,0.65);width:40px;height:40px;background:rgba(0,0,0,0.28);border:0.5px solid rgba(255,255,255,0.2);}
 .hero .swiper-button-next::after,.hero .swiper-button-prev::after{font-size:12px;}
 .hero .swiper-pagination-bullet{background:rgba(255,255,255,0.35);opacity:1;width:6px;height:6px;}
 .hero .swiper-pagination-bullet-active{background:var(--gold2);width:18px;border-radius:3px;}
 .hero .swiper-pagination{bottom:40px;left:76px;right:auto;width:auto;text-align:left;}
-/* Info bar */
 .infobar{background:rgba(14,8,2,0.85);backdrop-filter:blur(8px);display:flex;align-items:stretch;height:56px;flex-shrink:0;border-top:0.5px solid rgba(196,149,42,0.18);}
 .ib{flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 20px;border-right:0.5px solid rgba(196,149,42,0.1);}
 .ib-l{font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:2px;}
@@ -68,29 +63,16 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
 .ib-btn{background:var(--gold);color:var(--ink);font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:0 26px;border:none;cursor:pointer;flex-shrink:0;transition:all 0.2s;}
 .ib-btn:hover{background:var(--gold2);}
 
-/* ===== SHARED INNER LAYOUTS ===== */
-/* Two-col split used by rooms, book, about, events */
+/* SHARED LAYOUTS */
 .split{display:grid;height:100%;}
 .split-2{grid-template-columns:1fr 1fr;}
 .split-rooms{grid-template-columns:270px 1fr;}
 .split-book{grid-template-columns:1fr 1.45fr;}
-/* dark left panel */
 .dark-side{background:var(--ink);overflow-y:auto;padding:44px 46px;display:flex;flex-direction:column;justify-content:center;}
-/* light right panel */
 .light-side{background:var(--cream);overflow-y:auto;padding:36px 46px;}
 .mist-side{background:var(--mist);overflow-y:auto;padding:46px 44px;}
 
-/* Section headers */
-.sec-tag{font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
-.sec-h{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--cream);line-height:1.15;margin-bottom:8px;}
-.sec-h i{font-style:italic;color:var(--gold2);}
-.sec-hd{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--ink);line-height:1.15;margin-bottom:8px;}
-.sec-hd i{font-style:italic;color:var(--sage);}
-.sec-p{font-size:13px;font-weight:300;line-height:1.85;margin-bottom:18px;}
-.sec-p-d{color:var(--stone);}
-.sec-p-l{color:rgba(249,244,232,0.5);}
-
-/* ===== ROOMS ===== */
+/* ROOMS */
 .room-list{background:var(--mist);overflow-y:auto;border-right:0.5px solid rgba(26,20,9,0.1);}
 .room-list-head{padding:16px 20px 12px;border-bottom:0.5px solid rgba(26,20,9,0.08);position:sticky;top:0;background:var(--mist);z-index:1;}
 .rh-t{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--ink);}
@@ -102,7 +84,6 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
 .ri-cat{font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);}
 .ri-n{font-size:13px;font-weight:500;color:var(--ink);margin:2px 0;}
 .ri-p{font-size:11px;color:var(--stone);}
-/* room detail right */
 .rd-wrap{overflow-y:auto;display:flex;flex-direction:column;height:100%;}
 .rd-sl{height:340px;flex-shrink:0;position:relative;}
 .rd-sl .swiper,.rd-sl .swiper-slide{width:100%;height:100%;}
@@ -125,7 +106,7 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
 .rd-bb{background:var(--gold);color:var(--ink);font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:9px 20px;border:none;cursor:pointer;white-space:nowrap;}
 .rd-bb:hover{background:var(--gold2);}
 
-/* ===== GALLERY ===== */
+/* GALLERY */
 #gallery.on{display:grid;grid-template-columns:1fr 280px;}
 .gal-main{position:relative;overflow:hidden;}
 .gal-sw,.gal-sw .swiper-slide{width:100%;height:100%;}
@@ -150,7 +131,7 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
 .gth img{width:100%;height:100%;object-fit:cover;transition:transform 0.3s;}
 .gth:hover img{transform:scale(1.06);}
 
-/* ===== MENU ===== */
+/* MENU */
 #menu.on{display:grid;grid-template-columns:1fr 1fr;}
 .menu-vis{position:relative;overflow:hidden;}
 .menu-vis .swiper,.menu-vis .swiper-slide{width:100%;height:100%;}
@@ -180,7 +161,7 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
 .md{font-size:11px;font-weight:300;color:var(--stone);line-height:1.4;}
 .mp{font-size:12px;font-weight:500;color:var(--sage);white-space:nowrap;margin-left:10px;margin-top:1px;}
 
-/* ===== EVENTS ===== */
+/* EVENTS */
 #events.on{display:flex;flex-direction:column;}
 .ev-hero{height:80px;flex-shrink:0;position:relative;overflow:hidden;}
 .ev-hero img{width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:brightness(0.4);}
@@ -192,7 +173,6 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
 .ev-hero-div{width:0.5px;height:28px;background:rgba(196,149,42,0.35);flex-shrink:0;}
 .ev-hero-p{font-size:11px;font-weight:300;color:rgba(255,255,255,0.55);line-height:1.5;max-width:380px;}
 .ev-body{flex:1;overflow-y:auto;padding:32px 52px;}
-/* Event cards grid */
 .ev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:32px;}
 .ev-card{background:var(--ink);overflow:hidden;cursor:pointer;transition:transform 0.25s;}
 .ev-card:hover{transform:translateY(-4px);}
@@ -208,7 +188,6 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
 .ev-card-price{font-size:12px;color:var(--gold2);font-weight:400;margin-bottom:12px;}
 .ev-card-btn{background:var(--gold);color:var(--ink);font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:8px 16px;border:none;cursor:pointer;transition:all 0.2s;width:100%;}
 .ev-card-btn:hover{background:var(--gold2);}
-/* Enquiry form */
 .ev-form-wrap{background:var(--mist);padding:28px 32px;}
 .ev-form-t{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--ink);margin-bottom:4px;}
 .ev-form-s{font-size:12px;font-weight:300;color:var(--stone);margin-bottom:20px;}
@@ -222,7 +201,7 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
 .ef-submit{background:var(--sage);color:var(--cream);font-family:'Outfit',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;padding:12px 32px;border:none;cursor:pointer;transition:all 0.2s;}
 .ef-submit:hover{background:var(--gold);color:var(--ink);}
 
-/* ===== BOOK ===== */
+/* BOOK */
 .bl-t{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:300;color:var(--cream);line-height:1.1;margin-bottom:7px;}
 .bl-t i{font-style:italic;color:var(--gold2);}
 .bl-sub{font-size:13px;font-weight:300;color:rgba(249,244,232,0.44);margin-bottom:26px;line-height:1.7;}
@@ -254,7 +233,7 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
 .bf-sub:hover{background:var(--gold);color:var(--ink);}
 .bf-note{font-size:10px;color:var(--stone);text-align:center;margin-top:8px;line-height:1.6;}
 
-/* ===== ABOUT ===== */
+/* ABOUT */
 .at-tag{font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
 .at-h{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:var(--ink);line-height:1.15;margin-bottom:14px;}
 .at-h i{font-style:italic;color:var(--sage);}
@@ -270,7 +249,7 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
 .test-q{font-family:'Cormorant Garamond',serif;font-size:14px;font-style:italic;color:var(--cream);line-height:1.6;margin-bottom:6px;}
 .test-a{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(249,244,232,0.4);}
 
-/* WA FAB */
+/* WA */
 .wa{position:fixed;bottom:18px;right:18px;z-index:9999;width:44px;height:44px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 3px 12px rgba(37,211,102,0.38);transition:transform 0.2s;text-decoration:none;}
 .wa:hover{transform:scale(1.1);}
 .wa svg{width:22px;height:22px;fill:white;}
@@ -282,121 +261,131 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
 .hero-pills{animation:fu 0.6s ease 0.38s both;}
 .hero-btns{animation:fu 0.6s ease 0.46s both;}
 
-/* ===== MOBILE RESPONSIVE ===== */
-@media(max-width:768px){
-  /* NAV - hide desktop nav on mobile, mob-nav replaces it */
-  nav{display:none!important;}
-  .mob-nav{height:54px;}
+/* ── MOBILE NAV ─────────────────────────────────────────────────────────── */
+.mob-nav{display:none;}
 
-  /* Override desktop fixed layout for mobile */
+@media(max-width:768px){
+  /* ── Override desktop layout ── */
   html,body{height:auto!important;overflow:auto!important;}
   body{display:block!important;}
-  .stage{height:auto!important;overflow:visible!important;padding-top:104px;}
-  .pane{position:relative!important;inset:auto!important;display:none;}
+  nav{display:none!important;}
+
+  /* ── Mobile nav bar ── */
+  .mob-nav{
+    display:flex!important;
+    position:fixed;top:0;left:0;right:0;
+    z-index:9999;
+    height:56px;
+    background:var(--ink);
+    border-bottom:0.5px solid rgba(196,149,42,0.2);
+    align-items:center;
+    padding:0 10px 0 16px;
+  }
+  .mob-logo{
+    font-family:'Cormorant Garamond',serif;
+    font-size:17px;color:var(--cream);
+    white-space:nowrap;margin-right:6px;flex-shrink:0;
+  }
+  .mob-logo b{color:var(--gold);}
+  .mob-tabs{display:flex;flex:1;align-items:center;justify-content:flex-end;}
+  .mob-tab{
+    flex:1;display:flex;flex-direction:column;align-items:center;
+    justify-content:center;gap:1px;cursor:pointer;border:none;
+    border-bottom:2px solid transparent;background:none;
+    color:rgba(249,244,232,0.35);font-family:'Outfit',sans-serif;
+    font-size:6px;letter-spacing:0.05em;text-transform:uppercase;
+    transition:all 0.2s;padding:0;max-width:46px;
+  }
+  .mob-tab svg{width:16px;height:16px;}
+  .mob-tab.on{color:var(--gold);border-bottom-color:var(--gold);}
+  .mob-tab.on svg{stroke:var(--gold);}
+
+  /* ── Stage and panes ── */
+  .stage{height:auto!important;overflow:visible!important;padding-top:56px;}
+  .pane{position:relative!important;inset:auto!important;display:none!important;}
   .pane.on{display:block!important;}
 
-  /* HOME */
+  /* ── HOME ── */
   #home.on{display:block!important;}
-  .hero{height:75vh;min-height:460px;}
-  .hero-stats{display:none!important;}
-  .mob-stats{display:flex!important;}
-  .hero-txt{padding:0 22px 80px;}
-  .hero-h1{font-size:clamp(32px,10vw,52px);}
+  .hero{height:82vh;min-height:480px;}
+  .hero-txt{padding:0 20px 70px;}
+  .hero-h1{font-size:clamp(30px,9vw,50px);}
   .hero-p{font-size:12px;max-width:100%;}
   .hero-pills{gap:5px;}
   .pill{font-size:9px;padding:3px 8px;}
   .hero-btns{flex-direction:column;gap:8px;}
-  .btn-g,.btn-o{width:100%;text-align:center;padding:12px;}
+  .btn-g,.btn-o{width:100%;text-align:center;padding:13px;}
   .hero-stats{display:none!important;}
   .infobar{flex-wrap:wrap;height:auto;padding:8px 0;}
   .ib{min-width:50%;border-right:none;border-bottom:0.5px solid rgba(196,149,42,0.1);padding:7px 14px;}
-  .ib-btn{width:100%;padding:11px;text-align:center;}
+  .ib-btn{width:100%;padding:12px;text-align:center;}
 
-  /* ROOMS - card grid on mobile */
+  /* ── ROOMS ── */
   #rooms.on{display:block!important;}
-  .split-rooms{display:block!important;height:auto;}
-  /* Hide the desktop split layout, show mobile cards instead */
+  .split-rooms{display:block!important;height:auto!important;}
   .room-list{display:none!important;}
   .rd-wrap{display:none!important;}
-  .mob-room-grid{display:grid!important;grid-template-columns:1fr;gap:0;padding:0;}
-  .mob-room-card{background:var(--cream);overflow:hidden;border-bottom:2px solid rgba(196,149,42,0.15);}
-  .mob-room-card-img{position:relative;overflow:hidden;}
-  .mob-room-card img{width:100%;height:70vw;object-fit:cover;display:block;}
-  .mob-room-card-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(14,8,2,0.92) 0%,rgba(14,8,2,0.3) 50%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:20px 18px 14px;}
+  .mob-room-grid{display:grid!important;grid-template-columns:1fr;}
+  .mob-room-grid-hd{padding:18px 16px 12px;background:var(--mist);border-bottom:0.5px solid rgba(26,20,9,0.08);}
+  .mob-room-grid-t{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:var(--ink);}
+  .mob-room-grid-s{font-size:11px;color:var(--stone);margin-top:3px;}
+  .mob-room-card{overflow:hidden;border-bottom:1px solid rgba(196,149,42,0.12);}
+  .mob-room-card-img{position:relative;}
+  .mob-room-card img{width:100%;height:68vw;object-fit:cover;display:block;}
+  .mob-room-card-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(14,8,2,0.9) 0%,rgba(14,8,2,0.25) 50%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:20px 18px 14px;}
   .mob-room-cat{font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold2);margin-bottom:5px;}
-  .mob-room-name{font-family:"Cormorant Garamond",serif;font-size:28px;font-weight:300;color:#fff;line-height:1.1;}
-  .mob-room-body-row{display:flex;align-items:center;justify-content:space-between;padding:12px 18px 14px;background:var(--ink);}
-  .mob-room-price{font-size:12px;color:rgba(249,244,232,0.55);font-weight:300;}
-  .mob-room-book{background:var(--gold);color:var(--ink);font-family:"Outfit",sans-serif;font-size:9px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:9px 20px;border:none;cursor:pointer;white-space:nowrap;}
+  .mob-room-name{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:#fff;line-height:1.1;}
+  .mob-room-body-row{display:flex;align-items:center;justify-content:space-between;padding:13px 18px;background:var(--ink);}
+  .mob-room-price{font-size:12px;color:rgba(249,244,232,0.5);font-weight:300;}
+  .mob-room-book{background:var(--gold);color:var(--ink);font-family:'Outfit',sans-serif;font-size:9px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:9px 20px;border:none;cursor:pointer;}
 
-  /* GALLERY */
+  /* ── GALLERY ── */
   #gallery.on{display:block!important;}
-  .gal-main{height:62vw;min-height:240px;}
-  .gal-side{max-height:none;overflow-y:visible;background:var(--ink);}
+  .gal-main{height:60vw;min-height:220px;}
+  .gal-side{background:var(--ink);}
   .gal-side-h{padding:10px 14px 8px;}
   .gal-thumbs{grid-template-columns:repeat(3,1fr);gap:3px;padding:4px;}
   .gth{aspect-ratio:1;}
 
-  /* MENU */
+  /* ── MENU ── */
   #menu.on{display:block!important;}
-  .menu-vis{height:260px;}
-  .menu-list-h{padding:12px 16px 10px;}
-  .menu-items{padding:0 16px 12px;}
+  .menu-vis{height:56vw;min-height:220px;}
 
-  /* EVENTS */
+  /* ── EVENTS ── */
   #events.on{display:block!important;}
-  .ev-hero{height:72px;}
-  .ev-hero-txt{flex-direction:column;align-items:flex-start;gap:2px;padding:0 18px;justify-content:center;}
+  .ev-hero{height:70px;}
+  .ev-hero-txt{flex-direction:column;align-items:flex-start;gap:2px;padding:0 16px;}
   .ev-hero-div{display:none;}
-  .ev-hero-tag{font-size:8px;margin-bottom:0;}
-  .ev-hero-h{font-size:16px;white-space:normal;line-height:1.2;}
+  .ev-hero-h{font-size:16px;white-space:normal;}
   .ev-hero-p{display:none;}
   .ev-body{padding:14px 14px 20px;}
   .ev-grid{grid-template-columns:1fr;gap:12px;}
-  .ev-card-img{height:150px;}
   .ev-form-wrap{padding:16px 14px;}
   .ev-form-grid{grid-template-columns:1fr;gap:10px;}
   .ef-field.span2{grid-column:span 1;}
 
-  /* BOOK NOW */
+  /* ── BOOK ── */
   #book.on{display:block!important;}
-  .split-book{display:block!important;height:auto;}
-  .dark-side{padding:24px 20px;}
+  .split-book{display:block!important;height:auto!important;}
+  .dark-side{padding:24px 18px;}
   .bl-t{font-size:26px;}
-  .light-side{padding:20px 16px 20px;}
+  .light-side{padding:20px 16px;}
   .bf-grid{grid-template-columns:1fr;}
   .bf-f.s2{grid-column:span 1;}
-  .bf-total{flex-direction:column;gap:8px;align-items:flex-start;}
+  .bf-total{flex-direction:column;gap:6px;align-items:flex-start;}
 
-  /* ABOUT */
+  /* ── ABOUT ── */
   #about.on{display:block!important;}
-  .split-2{display:block!important;height:auto;}
-  .split-2>div:first-child{height:220px;}
-  .mist-side{padding:24px 20px 20px;}
+  .split-2{display:block!important;height:auto!important;}
+  .split-2>div:first-child{height:220px;overflow:hidden;}
+  .mist-side{padding:24px 18px;}
   .at-vals{grid-template-columns:1fr 1fr;}
-
-  .wa{bottom:18px;right:14px;}
 }
-
-/* Show mob-nav only on mobile */
-.mob-nav{display:none;}
-@media(max-width:768px){
-  .mob-nav{display:flex!important;}
-  html,body{height:100%;overflow:hidden;}
-}
-/* Mobile nav base style */
-.mob-nav{position:fixed;top:0;left:0;right:0;z-index:9998;background:#1C1409;border-bottom:0.5px solid rgba(196,149,42,0.25);height:54px;display:none;align-items:center;padding:0 8px 0 16px;}
-.mob-logo{font-family:'Cormorant Garamond',serif;font-size:18px;color:#F9F4E8;white-space:nowrap;margin-right:auto;}
-.mob-logo b{color:#C4952A;}
-.mob-tab{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer;border:none;border-bottom:2px solid transparent;background:none;color:rgba(249,244,232,0.38);font-family:'Outfit',sans-serif;font-size:7px;letter-spacing:0.06em;text-transform:uppercase;transition:all 0.2s;padding:0 2px;}
-.mob-tab svg{width:19px;height:19px;transition:all 0.2s;}
-.mob-tab.on{color:var(--gold);border-bottom-color:var(--gold);}
-.mob-tab.on svg{stroke:var(--gold);}
-.mob-tab:active{opacity:0.7;}
 </style>
 </head>
 <body>
 
+<!-- DESKTOP NAV -->
 <nav>
   <span class="logo">Loisoi <b>Ranch</b></span>
   <div class="nav-tabs">
@@ -411,22 +400,18 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
   <button class="nav-btn" onclick="go('book')">&#9889; Quick Book</button>
 </nav>
 
-<!-- MOBILE BOTTOM NAV -->
+<!-- MOBILE NAV — logo left + icons right in one bar -->
 <div class="mob-nav">
-   <span class="mob-logo">Loisoi <b>Ranch</b></span>
-  <button class="mob-tab on" onclick="go('home')">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l1 13 9 2 9-2 1-13z"/><path d="M12 2v20M2 7h20"/></svg>Home</button>
-  <button class="mob-tab" onclick="go('rooms')">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22V8a2 2 0 012-2h14a2 2 0 012 2v14"/><path d="M3 22h18"/><path d="M8 22v-5h8v5"/><path d="M9 6V3h6v3"/></svg>Rooms</button>
-  <button class="mob-tab" onclick="go('gallery')">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l4-4 4 4 4-4 4 4"/><rect x="3" y="9" width="18" height="13" rx="1"/><circle cx="8" cy="14" r="1.5"/><path d="M21 17l-4-4-6 6"/></svg>Gallery</button>
-  <button class="mob-tab" onclick="go('menu')">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 00-7 7c0 3 2 5 2 8h10c0-3 2-5 2-8a7 7 0 00-7-7z"/><path d="M8 22h8M12 17v5"/></svg>Menu</button>
-  <button class="mob-tab" onclick="go('events')">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2 2 0 012 2v14a2 2 0 01-2 2H7a2 2 0 01-2-2V5a2 2 0 012-2"/><path d="M8 3h8"/><path d="M9 12h6M9 16h4"/><path d="M15 7H9"/></svg>Events</button>
-  <button class="mob-tab" onclick="go('about')">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>About</button>
-  <button class="mob-tab" onclick="go('book')"><span class="mi">📅</span>Book</button>
+  <span class="mob-logo">Loisoi <b>Ranch</b></span>
+  <div class="mob-tabs">
+    <button class="mob-tab on" onclick="go('home')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 9h3v11h5v-6h4v6h5V9h3L12 2z"/></svg>Home</button>
+    <button class="mob-tab" onclick="go('rooms')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22V8a2 2 0 012-2h14a2 2 0 012 2v14M3 22h18M8 22v-5h8v5"/></svg>Rooms</button>
+    <button class="mob-tab" onclick="go('gallery')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="3"/><circle cx="8" cy="8" r="2"/><path d="M2 15l6-6 5 5 3-3 6 6"/></svg>Gallery</button>
+    <button class="mob-tab" onclick="go('menu')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 00-7 7c0 3 2 5 2 8h10c0-3 2-5 2-8a7 7 0 00-7-7z"/><line x1="8" y1="22" x2="16" y2="22"/><line x1="12" y1="17" x2="12" y2="22"/></svg>Menu</button>
+    <button class="mob-tab" onclick="go('events')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Events</button>
+    <button class="mob-tab" onclick="go('about')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>About</button>
+    <button class="mob-tab" onclick="go('book')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01M12 14h.01M16 14h.01"/></svg>Book</button>
+  </div>
 </div>
 
 <div class="stage">
@@ -436,7 +421,7 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
   <div class="hero">
     <div class="swiper" id="heroSw">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600&q=85" alt="Resort aerial"></div>
+        <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600&q=85" alt="Resort"></div>
         <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1600&q=85" alt="Grounds"></div>
         <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1600&q=85" alt="Pool"></div>
         <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1600&q=85" alt="Fire pit"></div>
@@ -476,21 +461,6 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
     <div class="ib" style="border-right:none;"><div class="ib-l">Reservations</div><div class="ib-v">Daily 7:00 AM &ndash; 9:00 PM EAT</div></div>
     <button class="ib-btn" onclick="go('book')">Book Now &#8599;</button>
   </div>
-  <!-- Mobile stats bar -->
-  <div class="mob-stats" style="display:none;background:var(--ink);padding:10px 0;border-top:0.5px solid rgba(196,149,42,0.15);">
-    <div style="flex:1;text-align:center;border-right:0.5px solid rgba(196,149,42,0.15);">
-      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--gold2);">50</div>
-      <div style="font-size:7px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(249,244,232,0.35);margin-top:1px;">Acres</div>
-    </div>
-    <div style="flex:1;text-align:center;border-right:0.5px solid rgba(196,149,42,0.15);">
-      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--gold2);">9</div>
-      <div style="font-size:7px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(249,244,232,0.35);margin-top:1px;">Room Types</div>
-    </div>
-    <div style="flex:1;text-align:center;">
-      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--gold2);">500+</div>
-      <div style="font-size:7px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(249,244,232,0.35);margin-top:1px;">Happy Guests</div>
-    </div>
-  </div>
 </div>
 
 <!-- ROOMS -->
@@ -498,15 +468,15 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
   <div class="split split-rooms" style="height:100%;">
     <div class="room-list">
       <div class="room-list-head"><div class="rh-t">Our Rooms</div><div class="rh-s">9 unique stays &middot; All ensuite</div></div>
-      <div class="ri on" onclick="pickRoom(0,this)"><img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=120&q=70" alt=""><div><div class="ri-cat">Glamping</div><div class="ri-n">Luxury Safari Tent</div><div class="ri-p">From Ksh 9,000/night</div></div></div>
-      <div class="ri" onclick="pickRoom(1,this)"><img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=120&q=70" alt=""><div><div class="ri-cat">Cottage</div><div class="ri-n">Kifaru Cottage</div><div class="ri-p">From Ksh 12,000/night</div></div></div>
-      <div class="ri" onclick="pickRoom(2,this)"><img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=120&q=70" alt=""><div><div class="ri-cat">Suite</div><div class="ri-n">Executive Room</div><div class="ri-p">From Ksh 14,000/night</div></div></div>
-      <div class="ri" onclick="pickRoom(3,this)"><img src="https://images.unsplash.com/photo-1602002418082-a4443e081dd1?w=120&q=70" alt=""><div><div class="ri-cat">Suite &middot; 4 Bed</div><div class="ri-n">Africana Suite</div><div class="ri-p">From Ksh 9,000/person</div></div></div>
-      <div class="ri" onclick="pickRoom(4,this)"><img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=120&q=70" alt=""><div><div class="ri-cat">Swahili Style</div><div class="ri-n">Makuti Room</div><div class="ri-p">From Ksh 9,000/night</div></div></div>
-      <div class="ri" onclick="pickRoom(5,this)"><img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=120&q=70" alt=""><div><div class="ri-cat">Cottage &middot; 2 Bed</div><div class="ri-n">Cottage Vintage</div><div class="ri-p">From Ksh 12,000/night</div></div></div>
-      <div class="ri" onclick="pickRoom(6,this)"><img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=120&q=70" alt=""><div><div class="ri-cat">Room</div><div class="ri-n">Deluxe Room</div><div class="ri-p">From Ksh 9,000/night</div></div></div>
-      <div class="ri" onclick="pickRoom(7,this)"><img src="https://images.unsplash.com/photo-1600011689032-8b628b8a8747?w=120&q=70" alt=""><div><div class="ri-cat">Cottage &middot; 1 Bed</div><div class="ri-n">Cottage Classic</div><div class="ri-p">From Ksh 12,000/night</div></div></div>
-      <div class="ri" onclick="pickRoom(8,this)"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=120&q=70" alt=""><div><div class="ri-cat">Cottage &middot; 2 Bed</div><div class="ri-n">Cottage Fig Tree</div><div class="ri-p">From Ksh 12,000/night</div></div></div>
+      <div class="ri on" onclick="pickRoom(0,this)"><img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=120&q=70" alt=""><div><div class="ri-cat">Glamping</div><div class="ri-n">Luxury Safari Tent</div><div class="ri-p">From Ksh 8,000/night</div></div></div>
+      <div class="ri" onclick="pickRoom(1,this)"><img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=120&q=70" alt=""><div><div class="ri-cat">Cottage</div><div class="ri-n">Kifaru Cottage</div><div class="ri-p">From Ksh 8,000/night</div></div></div>
+      <div class="ri" onclick="pickRoom(2,this)"><img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=120&q=70" alt=""><div><div class="ri-cat">Suite</div><div class="ri-n">Executive Room</div><div class="ri-p">From Ksh 10,000/night</div></div></div>
+      <div class="ri" onclick="pickRoom(3,this)"><img src="https://images.unsplash.com/photo-1602002418082-a4443e081dd1?w=120&q=70" alt=""><div><div class="ri-cat">Suite &middot; 4 Bed</div><div class="ri-n">Africana Suite</div><div class="ri-p">From Ksh 8,000/person</div></div></div>
+      <div class="ri" onclick="pickRoom(4,this)"><img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=120&q=70" alt=""><div><div class="ri-cat">Swahili Style</div><div class="ri-n">Makuti Room</div><div class="ri-p">From Ksh 8,000/night</div></div></div>
+      <div class="ri" onclick="pickRoom(5,this)"><img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=120&q=70" alt=""><div><div class="ri-cat">Cottage &middot; 2 Bed</div><div class="ri-n">Cottage Vintage</div><div class="ri-p">From Ksh 8,000/night</div></div></div>
+      <div class="ri" onclick="pickRoom(6,this)"><img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=120&q=70" alt=""><div><div class="ri-cat">Room</div><div class="ri-n">Deluxe Room</div><div class="ri-p">From Ksh 8,000/night</div></div></div>
+      <div class="ri" onclick="pickRoom(7,this)"><img src="https://images.unsplash.com/photo-1600011689032-8b628b8a8747?w=120&q=70" alt=""><div><div class="ri-cat">Cottage &middot; 1 Bed</div><div class="ri-n">Cottage Classic</div><div class="ri-p">From Ksh 8,000/night</div></div></div>
+      <div class="ri" onclick="pickRoom(8,this)"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=120&q=70" alt=""><div><div class="ri-cat">Cottage &middot; 2 Bed</div><div class="ri-n">Cottage Fig Tree</div><div class="ri-p">From Ksh 8,000/night</div></div></div>
     </div>
     <div class="rd-wrap">
       <div class="rd-sl">
@@ -517,142 +487,31 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
       <div class="rd-body">
         <div class="rd-grid">
           <div><div class="rd-il">Sleeps</div><div class="rd-iv" id="rdSleeps">2 Guests</div></div>
-          <div><div class="rd-il">From</div><div class="rd-iv" id="rdFrom">Ksh 9,000 / night</div></div>
+          <div><div class="rd-il">From</div><div class="rd-iv" id="rdFrom">Ksh 8,000/night</div></div>
           <div><div class="rd-il">Type</div><div class="rd-iv" id="rdType">Luxury Tent</div></div>
           <div><div class="rd-il">Board</div><div class="rd-iv">B&amp;B / Half / Full Board</div></div>
         </div>
         <p class="rd-desc" id="rdDesc">Safari-style ensuite tent with open-air deck and sweeping highland views.</p>
         <div class="rd-feats" id="rdFeats"><span class="feat">Ensuite Bathroom</span><span class="feat">Private Deck</span><span class="feat">Mountain Views</span><span class="feat">Double Bed</span></div>
       </div>
-      <div class="rd-bar" style="justify-content:space-between;">
-        <span style="font-size:12px;font-weight:300;color:var(--stone);">Ready to reserve this room? Complete your booking below.</span>
+      <div class="rd-bar" style="display:flex;align-items:center;justify-content:space-between;padding:12px 22px;background:var(--mist);border-top:0.5px solid rgba(26,20,9,0.07);">
+        <span style="font-size:12px;font-weight:300;color:var(--stone);">Ready to reserve? Complete your booking below.</span>
         <button class="rd-bb" onclick="go('book')">Book This Room &#8599;</button>
       </div>
     </div>
   </div>
-  <!-- MOBILE ROOM CARDS — shown only on mobile -->
+  <!-- MOBILE ROOM CARDS -->
   <div class="mob-room-grid" style="display:none;">
-    <div style="padding:16px 18px 12px;background:var(--mist);border-bottom:0.5px solid rgba(26,20,9,0.08);">
-      <div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:var(--ink);">Our Rooms</div>
-      <div style="font-size:11px;color:var(--stone);margin-top:3px;letter-spacing:0.04em;">9 unique stays · All ensuite · Swipe to explore</div>
-    </div>
-    <div class="mob-room-card">
-      <div class="mob-room-card-img">
-        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=700&q=85" alt="Safari Tent" loading="lazy">
-        <div class="mob-room-card-ov">
-          <div class="mob-room-cat">Glamping · Most Popular</div>
-          <div class="mob-room-name">Luxury Safari Tent</div>
-        </div>
-      </div>
-      <div class="mob-room-body-row">
-        <div class="mob-room-price">From Ksh 8,000 / night</div>
-        <button class="mob-room-book" onclick="go('book')">Book Now &#8599;</button>
-      </div>
-    </div>
-    <div class="mob-room-card">
-      <div class="mob-room-card-img">
-        <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=700&q=85" alt="Kifaru" loading="lazy">
-        <div class="mob-room-card-ov">
-          <div class="mob-room-cat">Cottage · 1 Bedroom</div>
-          <div class="mob-room-name">Kifaru Cottage</div>
-        </div>
-      </div>
-      <div class="mob-room-body-row">
-        <div class="mob-room-price">From Ksh 8,000 / night</div>
-        <button class="mob-room-book" onclick="go('book')">Book Now &#8599;</button>
-      </div>
-    </div>
-    <div class="mob-room-card">
-      <div class="mob-room-card-img">
-        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=700&q=85" alt="Executive" loading="lazy">
-        <div class="mob-room-card-ov">
-          <div class="mob-room-cat">Suite · Executive</div>
-          <div class="mob-room-name">Executive Room</div>
-        </div>
-      </div>
-      <div class="mob-room-body-row">
-        <div class="mob-room-price">From Ksh 10,000 / night</div>
-        <button class="mob-room-book" onclick="go('book')">Book Now &#8599;</button>
-      </div>
-    </div>
-    <div class="mob-room-card">
-      <div class="mob-room-card-img">
-        <img src="https://images.unsplash.com/photo-1602002418082-a4443e081dd1?w=700&q=85" alt="Africana" loading="lazy">
-        <div class="mob-room-card-ov">
-          <div class="mob-room-cat">Suite · 4 Bedrooms</div>
-          <div class="mob-room-name">Africana Suite</div>
-        </div>
-      </div>
-      <div class="mob-room-body-row">
-        <div class="mob-room-price">From Ksh 8,000 / person</div>
-        <button class="mob-room-book" onclick="go('book')">Book Now &#8599;</button>
-      </div>
-    </div>
-    <div class="mob-room-card">
-      <div class="mob-room-card-img">
-        <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=700&q=85" alt="Makuti" loading="lazy">
-        <div class="mob-room-card-ov">
-          <div class="mob-room-cat">Room · Swahili Style</div>
-          <div class="mob-room-name">Makuti Room</div>
-        </div>
-      </div>
-      <div class="mob-room-body-row">
-        <div class="mob-room-price">From Ksh 8,000 / night</div>
-        <button class="mob-room-book" onclick="go('book')">Book Now &#8599;</button>
-      </div>
-    </div>
-    <div class="mob-room-card">
-      <div class="mob-room-card-img">
-        <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=700&q=85" alt="Vintage" loading="lazy">
-        <div class="mob-room-card-ov">
-          <div class="mob-room-cat">Cottage · 2 Bedrooms</div>
-          <div class="mob-room-name">Cottage Vintage</div>
-        </div>
-      </div>
-      <div class="mob-room-body-row">
-        <div class="mob-room-price">From Ksh 8,000 / night</div>
-        <button class="mob-room-book" onclick="go('book')">Book Now &#8599;</button>
-      </div>
-    </div>
-    <div class="mob-room-card">
-      <div class="mob-room-card-img">
-        <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=700&q=85" alt="Deluxe" loading="lazy">
-        <div class="mob-room-card-ov">
-          <div class="mob-room-cat">Room · Deluxe</div>
-          <div class="mob-room-name">Deluxe Room</div>
-        </div>
-      </div>
-      <div class="mob-room-body-row">
-        <div class="mob-room-price">From Ksh 8,000 / night</div>
-        <button class="mob-room-book" onclick="go('book')">Book Now &#8599;</button>
-      </div>
-    </div>
-    <div class="mob-room-card">
-      <div class="mob-room-card-img">
-        <img src="https://images.unsplash.com/photo-1600011689032-8b628b8a8747?w=700&q=85" alt="Classic" loading="lazy">
-        <div class="mob-room-card-ov">
-          <div class="mob-room-cat">Cottage · 1 Bedroom</div>
-          <div class="mob-room-name">Cottage Classic</div>
-        </div>
-      </div>
-      <div class="mob-room-body-row">
-        <div class="mob-room-price">From Ksh 8,000 / night</div>
-        <button class="mob-room-book" onclick="go('book')">Book Now &#8599;</button>
-      </div>
-    </div>
-    <div class="mob-room-card">
-      <div class="mob-room-card-img">
-        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=700&q=85" alt="Fig Tree" loading="lazy">
-        <div class="mob-room-card-ov">
-          <div class="mob-room-cat">Cottage · 2 Bedrooms</div>
-          <div class="mob-room-name">Cottage Fig Tree</div>
-        </div>
-      </div>
-      <div class="mob-room-body-row">
-        <div class="mob-room-price">From Ksh 8,000 / night</div>
-        <button class="mob-room-book" onclick="go('book')">Book Now &#8599;</button>
-      </div>
-    </div>
+    <div class="mob-room-grid-hd"><div class="mob-room-grid-t">Our Rooms</div><div class="mob-room-grid-s">9 unique stays &middot; All ensuite</div></div>
+    <div class="mob-room-card"><div class="mob-room-card-img"><img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=700&q=85" alt="Safari Tent" loading="lazy"><div class="mob-room-card-ov"><div class="mob-room-cat">Glamping &middot; Most Popular</div><div class="mob-room-name">Luxury Safari Tent</div></div></div><div class="mob-room-body-row"><div class="mob-room-price">From Ksh 8,000 / night</div><button class="mob-room-book" onclick="go('book')">Book Now &#8599;</button></div></div>
+    <div class="mob-room-card"><div class="mob-room-card-img"><img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=700&q=85" alt="Kifaru" loading="lazy"><div class="mob-room-card-ov"><div class="mob-room-cat">Cottage &middot; 1 Bedroom</div><div class="mob-room-name">Kifaru Cottage</div></div></div><div class="mob-room-body-row"><div class="mob-room-price">From Ksh 8,000 / night</div><button class="mob-room-book" onclick="go('book')">Book Now &#8599;</button></div></div>
+    <div class="mob-room-card"><div class="mob-room-card-img"><img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=700&q=85" alt="Executive" loading="lazy"><div class="mob-room-card-ov"><div class="mob-room-cat">Suite &middot; Executive</div><div class="mob-room-name">Executive Room</div></div></div><div class="mob-room-body-row"><div class="mob-room-price">From Ksh 10,000 / night</div><button class="mob-room-book" onclick="go('book')">Book Now &#8599;</button></div></div>
+    <div class="mob-room-card"><div class="mob-room-card-img"><img src="https://images.unsplash.com/photo-1602002418082-a4443e081dd1?w=700&q=85" alt="Africana" loading="lazy"><div class="mob-room-card-ov"><div class="mob-room-cat">Suite &middot; 4 Bedrooms</div><div class="mob-room-name">Africana Suite</div></div></div><div class="mob-room-body-row"><div class="mob-room-price">From Ksh 8,000 / person</div><button class="mob-room-book" onclick="go('book')">Book Now &#8599;</button></div></div>
+    <div class="mob-room-card"><div class="mob-room-card-img"><img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=700&q=85" alt="Makuti" loading="lazy"><div class="mob-room-card-ov"><div class="mob-room-cat">Room &middot; Swahili Style</div><div class="mob-room-name">Makuti Room</div></div></div><div class="mob-room-body-row"><div class="mob-room-price">From Ksh 8,000 / night</div><button class="mob-room-book" onclick="go('book')">Book Now &#8599;</button></div></div>
+    <div class="mob-room-card"><div class="mob-room-card-img"><img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=700&q=85" alt="Vintage" loading="lazy"><div class="mob-room-card-ov"><div class="mob-room-cat">Cottage &middot; 2 Bedrooms</div><div class="mob-room-name">Cottage Vintage</div></div></div><div class="mob-room-body-row"><div class="mob-room-price">From Ksh 8,000 / night</div><button class="mob-room-book" onclick="go('book')">Book Now &#8599;</button></div></div>
+    <div class="mob-room-card"><div class="mob-room-card-img"><img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=700&q=85" alt="Deluxe" loading="lazy"><div class="mob-room-card-ov"><div class="mob-room-cat">Room &middot; Deluxe</div><div class="mob-room-name">Deluxe Room</div></div></div><div class="mob-room-body-row"><div class="mob-room-price">From Ksh 8,000 / night</div><button class="mob-room-book" onclick="go('book')">Book Now &#8599;</button></div></div>
+    <div class="mob-room-card"><div class="mob-room-card-img"><img src="https://images.unsplash.com/photo-1600011689032-8b628b8a8747?w=700&q=85" alt="Classic" loading="lazy"><div class="mob-room-card-ov"><div class="mob-room-cat">Cottage &middot; 1 Bedroom</div><div class="mob-room-name">Cottage Classic</div></div></div><div class="mob-room-body-row"><div class="mob-room-price">From Ksh 8,000 / night</div><button class="mob-room-book" onclick="go('book')">Book Now &#8599;</button></div></div>
+    <div class="mob-room-card"><div class="mob-room-card-img"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=700&q=85" alt="Fig Tree" loading="lazy"><div class="mob-room-card-ov"><div class="mob-room-cat">Cottage &middot; 2 Bedrooms</div><div class="mob-room-name">Cottage Fig Tree</div></div></div><div class="mob-room-body-row"><div class="mob-room-price">From Ksh 8,000 / night</div><button class="mob-room-book" onclick="go('book')">Book Now &#8599;</button></div></div>
   </div>
 </div>
 
@@ -660,7 +519,7 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
 <div class="pane" id="gallery">
   <div class="gal-main">
     <div class="swiper gal-sw" id="galSw"><div class="swiper-wrapper" id="galSlides"></div><div class="swiper-button-prev"></div><div class="swiper-button-next"></div><div class="swiper-pagination"></div></div>
-    <div class="gal-cap"><div class="gal-cap-c" id="galCatLbl">Grounds</div><div class="gal-cap-n" id="galNameLbl">Aerial view — Loisoi Ranch</div></div>
+    <div class="gal-cap"><div class="gal-cap-c" id="galCatLbl">Grounds</div><div class="gal-cap-n" id="galNameLbl">Aerial view</div></div>
     <div class="gal-cnt" id="galCnt">1 / 11</div>
   </div>
   <div class="gal-side">
@@ -712,136 +571,24 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
   </div>
   <div class="ev-body">
     <div class="ev-grid">
-      <!-- Conference -->
-      <div class="ev-card">
-        <div class="ev-card-img">
-          <img src="https://images.unsplash.com/photo-1431540015161-0bf868a2d407?w=600&q=80" alt="Conference">
-          <div class="ev-card-badge">Conference</div>
-        </div>
-        <div class="ev-card-body">
-          <div class="ev-card-t">Conference Room</div>
-          <p class="ev-card-p">Fully equipped modern conference facility surrounded by nature. Perfect for meetings, seminars, and training sessions.</p>
-          <div class="ev-card-feats">
-            <span class="ev-feat">Up to 50 Pax</span><span class="ev-feat">Full AV System</span>
-            <span class="ev-feat">Projector & Screen</span><span class="ev-feat">High-Speed WiFi</span>
-            <span class="ev-feat">Catering Available</span>
-          </div>
-          <div class="ev-card-price">From Ksh 15,000 / half day</div>
-          <button class="ev-card-btn" onclick="fillEvent('Conference Room Booking')">Enquire Now &#8599;</button>
-        </div>
-      </div>
-      <!-- Corporate Retreat -->
-      <div class="ev-card">
-        <div class="ev-card-img">
-          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80" alt="Corporate">
-          <div class="ev-card-badge">Corporate</div>
-        </div>
-        <div class="ev-card-body">
-          <div class="ev-card-t">Corporate Retreat</div>
-          <p class="ev-card-p">Step away from the office and into the bush. Team building, strategy sessions, and overnight stays in the wilderness.</p>
-          <div class="ev-card-feats">
-            <span class="ev-feat">Team Building</span><span class="ev-feat">Overnight Packages</span>
-            <span class="ev-feat">Group Accommodation</span><span class="ev-feat">Meals Included</span>
-            <span class="ev-feat">Nature Activities</span>
-          </div>
-          <div class="ev-card-price">From Ksh 8,000 / person / night</div>
-          <button class="ev-card-btn" onclick="fillEvent('Corporate Retreat Enquiry')">Enquire Now &#8599;</button>
-        </div>
-      </div>
-      <!-- Nature Walks -->
-      <div class="ev-card">
-        <div class="ev-card-img">
-          <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=80" alt="Nature Walk">
-          <div class="ev-card-badge">Nature</div>
-        </div>
-        <div class="ev-card-body">
-          <div class="ev-card-t">Nature Walks &amp; Hiking</div>
-          <p class="ev-card-p">Guided walks through 50 acres of pristine bush and beyond to the foothills of Mount Kenya. Suitable for all fitness levels.</p>
-          <div class="ev-card-feats">
-            <span class="ev-feat">Guided Walks</span><span class="ev-feat">Mt Kenya Hikes</span>
-            <span class="ev-feat">Birdwatching</span><span class="ev-feat">Wildlife Spotting</span>
-            <span class="ev-feat">Half / Full Day</span>
-          </div>
-          <div class="ev-card-price">From Ksh 2,500 / person</div>
-          <button class="ev-card-btn" onclick="fillEvent('Nature Walk & Hiking Enquiry')">Enquire Now &#8599;</button>
-        </div>
-      </div>
-      <!-- Bonfire -->
-      <div class="ev-card">
-        <div class="ev-card-img">
-          <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&q=80" alt="Bonfire">
-          <div class="ev-card-badge">Evening</div>
-        </div>
-        <div class="ev-card-body">
-          <div class="ev-card-t">Bush Bonfire &amp; Kikao</div>
-          <p class="ev-card-p">Gather around the fire under a sky full of stars. Traditional Kikao evenings with storytelling, nyama choma, and drinks.</p>
-          <div class="ev-card-feats">
-            <span class="ev-feat">Open-Air Firepit</span><span class="ev-feat">Nyama Choma</span>
-            <span class="ev-feat">Drinks Package</span><span class="ev-feat">Stargazing</span>
-            <span class="ev-feat">Up to 30 Guests</span>
-          </div>
-          <div class="ev-card-price">From Ksh 3,500 / person</div>
-          <button class="ev-card-btn" onclick="fillEvent('Bonfire & Kikao Enquiry')">Enquire Now &#8599;</button>
-        </div>
-      </div>
-      <!-- Day Trip -->
-      <div class="ev-card">
-        <div class="ev-card-img">
-          <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=600&q=80" alt="Wildlife">
-          <div class="ev-card-badge">Day Trip</div>
-        </div>
-        <div class="ev-card-body">
-          <div class="ev-card-t">Wildlife Day Trip</div>
-          <p class="ev-card-p">A full day on the ranch experiencing wildlife, bush walks, and a farm-to-table lunch — no overnight stay required.</p>
-          <div class="ev-card-feats">
-            <span class="ev-feat">Wildlife Walk</span><span class="ev-feat">Bush Lunch</span>
-            <span class="ev-feat">Photography</span><span class="ev-feat">Pool Access</span>
-            <span class="ev-feat">All Day 8AM–6PM</span>
-          </div>
-          <div class="ev-card-price">From Ksh 5,000 / person</div>
-          <button class="ev-card-btn" onclick="fillEvent('Wildlife Day Trip Enquiry')">Enquire Now &#8599;</button>
-        </div>
-      </div>
-      <!-- School Trip -->
-      <div class="ev-card">
-        <div class="ev-card-img">
-          <img src="https://images.unsplash.com/photo-1472162072942-cd5147eb3902?w=600&q=80" alt="Group">
-          <div class="ev-card-badge">Group</div>
-        </div>
-        <div class="ev-card-body">
-          <div class="ev-card-t">Group &amp; School Trips</div>
-          <p class="ev-card-p">Educational outdoor experiences for schools, youth groups, and large groups. Custom packages available on request.</p>
-          <div class="ev-card-feats">
-            <span class="ev-feat">Nature Education</span><span class="ev-feat">Group Rates</span>
-            <span class="ev-feat">Supervised Activities</span><span class="ev-feat">Meals Included</span>
-            <span class="ev-feat">Custom Itinerary</span>
-          </div>
-          <div class="ev-card-price">Custom pricing — contact us</div>
-          <button class="ev-card-btn" onclick="fillEvent('Group / School Trip Enquiry')">Enquire Now &#8599;</button>
-        </div>
-      </div>
+      <div class="ev-card"><div class="ev-card-img"><img src="https://images.unsplash.com/photo-1431540015161-0bf868a2d407?w=600&q=80" alt="Conference"><div class="ev-card-badge">Conference</div></div><div class="ev-card-body"><div class="ev-card-t">Conference Room</div><p class="ev-card-p">Fully equipped modern conference facility surrounded by nature.</p><div class="ev-card-feats"><span class="ev-feat">Up to 50 Pax</span><span class="ev-feat">Full AV System</span><span class="ev-feat">High-Speed WiFi</span></div><div class="ev-card-price">From Ksh 15,000 / half day</div><button class="ev-card-btn" onclick="fillEvent('Conference Room Booking')">Enquire Now &#8599;</button></div></div>
+      <div class="ev-card"><div class="ev-card-img"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80" alt="Corporate"><div class="ev-card-badge">Corporate</div></div><div class="ev-card-body"><div class="ev-card-t">Corporate Retreat</div><p class="ev-card-p">Team building, strategy sessions, and overnight stays in the wilderness.</p><div class="ev-card-feats"><span class="ev-feat">Team Building</span><span class="ev-feat">Overnight Packages</span><span class="ev-feat">Nature Activities</span></div><div class="ev-card-price">From Ksh 8,000 / person / night</div><button class="ev-card-btn" onclick="fillEvent('Corporate Retreat Enquiry')">Enquire Now &#8599;</button></div></div>
+      <div class="ev-card"><div class="ev-card-img"><img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=80" alt="Nature Walk"><div class="ev-card-badge">Nature</div></div><div class="ev-card-body"><div class="ev-card-t">Nature Walks &amp; Hiking</div><p class="ev-card-p">Guided walks through 50 acres of pristine bush and Mt Kenya foothills.</p><div class="ev-card-feats"><span class="ev-feat">Guided Walks</span><span class="ev-feat">Birdwatching</span><span class="ev-feat">Half / Full Day</span></div><div class="ev-card-price">From Ksh 2,500 / person</div><button class="ev-card-btn" onclick="fillEvent('Nature Walk Enquiry')">Enquire Now &#8599;</button></div></div>
+      <div class="ev-card"><div class="ev-card-img"><img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&q=80" alt="Bonfire"><div class="ev-card-badge">Evening</div></div><div class="ev-card-body"><div class="ev-card-t">Bush Bonfire &amp; Kikao</div><p class="ev-card-p">Gather around the fire under a sky full of stars. Nyama choma and drinks.</p><div class="ev-card-feats"><span class="ev-feat">Open-Air Firepit</span><span class="ev-feat">Nyama Choma</span><span class="ev-feat">Stargazing</span></div><div class="ev-card-price">From Ksh 3,500 / person</div><button class="ev-card-btn" onclick="fillEvent('Bonfire & Kikao Enquiry')">Enquire Now &#8599;</button></div></div>
+      <div class="ev-card"><div class="ev-card-img"><img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=600&q=80" alt="Wildlife"><div class="ev-card-badge">Day Trip</div></div><div class="ev-card-body"><div class="ev-card-t">Wildlife Day Trip</div><p class="ev-card-p">A full day on the ranch with wildlife, bush walks, and farm-to-table lunch.</p><div class="ev-card-feats"><span class="ev-feat">Wildlife Walk</span><span class="ev-feat">Bush Lunch</span><span class="ev-feat">Pool Access</span></div><div class="ev-card-price">From Ksh 5,000 / person</div><button class="ev-card-btn" onclick="fillEvent('Wildlife Day Trip Enquiry')">Enquire Now &#8599;</button></div></div>
+      <div class="ev-card"><div class="ev-card-img"><img src="https://images.unsplash.com/photo-1472162072942-cd5147eb3902?w=600&q=80" alt="Group"><div class="ev-card-badge">Group</div></div><div class="ev-card-body"><div class="ev-card-t">Group &amp; School Trips</div><p class="ev-card-p">Educational outdoor experiences for schools and large groups.</p><div class="ev-card-feats"><span class="ev-feat">Nature Education</span><span class="ev-feat">Group Rates</span><span class="ev-feat">Custom Itinerary</span></div><div class="ev-card-price">Custom pricing — contact us</div><button class="ev-card-btn" onclick="fillEvent('Group / School Trip Enquiry')">Enquire Now &#8599;</button></div></div>
     </div>
-    <!-- Enquiry form -->
     <div class="ev-form-wrap">
       <div class="ev-form-t">Event Enquiry</div>
       <p class="ev-form-s">Tell us about your event and we'll get back to you within a few hours</p>
       <div class="ev-form-grid">
         <div class="ef-field"><label class="ef-label">Full Name *</label><input class="ef-input" type="text" placeholder="Your name"></div>
         <div class="ef-field"><label class="ef-label">Phone / WhatsApp *</label><input class="ef-input" type="tel" placeholder="+254 7xx xxx xxx"></div>
-        <div class="ef-field"><label class="ef-label">Event Type</label>
-          <select class="ef-select" id="evType">
-            <option>Conference Room</option>
-            <option>Corporate Retreat</option>
-            <option>Nature Walk & Hiking</option>
-            <option>Bonfire & Kikao</option>
-            <option>Wildlife Day Trip</option>
-            <option>Group / School Trip</option>
-          </select>
-        </div>
+        <div class="ef-field"><label class="ef-label">Event Type</label><select class="ef-select" id="evType"><option>Conference Room</option><option>Corporate Retreat</option><option>Nature Walk & Hiking</option><option>Bonfire & Kikao</option><option>Wildlife Day Trip</option><option>Group / School Trip</option></select></div>
         <div class="ef-field"><label class="ef-label">Event Date *</label><input class="ef-input" type="date"></div>
         <div class="ef-field"><label class="ef-label">Number of People *</label><input class="ef-input" type="number" placeholder="e.g. 20" min="1"></div>
         <div class="ef-field"><label class="ef-label">Email (Optional)</label><input class="ef-input" type="email" placeholder="your@email.com"></div>
-        <div class="ef-field span2"><label class="ef-label">Additional Details</label><textarea class="ef-textarea" placeholder="Tell us more about your event, any special requirements, budget, etc."></textarea></div>
+        <div class="ef-field span2"><label class="ef-label">Additional Details</label><textarea class="ef-textarea" placeholder="Tell us more about your event..."></textarea></div>
       </div>
       <button class="ef-submit" onclick="submitEvent()">Send Event Enquiry via WhatsApp &#8599;</button>
     </div>
@@ -856,10 +603,10 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
       <p class="bl-sub">Fill in the form and we confirm within 1 hour via WhatsApp. M-Pesa deposit accepted.</p>
       <div class="bl-contacts">
         <div class="blc"><div class="blc-ic">&#128222;</div><div><div class="blc-l">Phone &amp; WhatsApp</div><div class="blc-v">+254 743 365 765</div></div></div>
-        <div class="blc"><div class="blc-ic">&#9993;</div><div><div class="blc-l">Email</div><div class="blc-v"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7b091e081e090d1a0f121415083b171412081412091a151813091e0814090f55181416">[email&#160;protected]</a></div></div></div>
+        <div class="blc"><div class="blc-ic">&#9993;</div><div><div class="blc-l">Email</div><div class="blc-v">reservations@loisoiranchresort.com</div></div></div>
         <div class="blc"><div class="blc-ic">&#128205;</div><div><div class="blc-l">Location</div><div class="blc-v">Loisoi Ranch Road, Nanyuki, Kenya</div></div></div>
       </div>
-      <div class="bl-hrs"><div class="bl-hrs-t">Reservations Hours</div><div class="bl-hrs-v">Mon – Sun: 7:00 AM – 9:00 PM EAT<br>WhatsApp messages answered first thing in the morning.</div></div>
+      <div class="bl-hrs"><div class="bl-hrs-t">Reservations Hours</div><div class="bl-hrs-v">Mon – Sun: 7:00 AM – 9:00 PM EAT</div></div>
       <div class="bl-pays"><span class="pay-b">M-Pesa</span><span class="pay-b">Visa</span><span class="pay-b">Bank Transfer</span><span class="pay-b">Cash</span></div>
     </div>
     <div class="light-side">
@@ -869,38 +616,28 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
         <div class="bf-f"><label class="bf-l">Full Name *</label><input class="bf-i" type="text" placeholder="Your full name"></div>
         <div class="bf-f"><label class="bf-l">Phone / WhatsApp *</label><input class="bf-i" type="tel" placeholder="+254 7xx xxx xxx"></div>
         <div class="bf-f"><label class="bf-l">Email (Optional)</label><input class="bf-i" type="email" placeholder="your@email.com"></div>
-        <div class="bf-f"><label class="bf-l">Guests</label>
-          <select class="bf-sel"><option>1 Adult</option><option>2 Adults</option><option>2 Adults, 1 Child</option><option>2 Adults, 2 Children</option><option>Group (5+)</option></select>
-        </div>
+        <div class="bf-f"><label class="bf-l">Guests</label><select class="bf-sel"><option>1 Adult</option><option>2 Adults</option><option>2 Adults, 1 Child</option><option>2 Adults, 2 Children</option><option>Group (5+)</option></select></div>
         <div class="bf-f"><label class="bf-l">Arrival Date *</label><input class="bf-i" type="date" id="bfIn" onchange="calcBf()"></div>
         <div class="bf-f"><label class="bf-l">Departure Date *</label><input class="bf-i" type="date" id="bfOut" onchange="calcBf()"></div>
         <div class="bf-f"><label class="bf-l">Room *</label>
           <select class="bf-sel" id="bfRoom" onchange="loadBfPkgs()">
             <option value="">Select a room</option>
-            <option value="0">Luxury Safari Tent</option>
-            <option value="1">Kifaru Cottage</option>
-            <option value="2">Executive Room</option>
-            <option value="3">Africana Suite</option>
-            <option value="4">Makuti Room</option>
-            <option value="5">Cottage Vintage</option>
-            <option value="6">Deluxe Room</option>
-            <option value="7">Cottage Classic</option>
+            <option value="0">Luxury Safari Tent</option><option value="1">Kifaru Cottage</option>
+            <option value="2">Executive Room</option><option value="3">Africana Suite</option>
+            <option value="4">Makuti Room</option><option value="5">Cottage Vintage</option>
+            <option value="6">Deluxe Room</option><option value="7">Cottage Classic</option>
             <option value="8">Cottage Fig Tree</option>
           </select>
         </div>
-        <div class="bf-f"><label class="bf-l">Package *</label>
-          <select class="bf-sel" id="bfPkg" onchange="calcBf()">
-            <option value="">Select room first</option>
-          </select>
-        </div>
-        <div class="bf-f s2"><label class="bf-l">Special Requests</label><textarea class="bf-ta" placeholder="Dietary requirements, special occasions, accessibility needs..."></textarea></div>
+        <div class="bf-f"><label class="bf-l">Package *</label><select class="bf-sel" id="bfPkg" onchange="calcBf()"><option value="">Select room first</option></select></div>
+        <div class="bf-f s2"><label class="bf-l">Special Requests</label><textarea class="bf-ta" placeholder="Dietary requirements, special occasions..."></textarea></div>
       </div>
       <div class="bf-total">
         <div class="bf-tl-wrap"><div class="bf-tl" id="bfNights">Select package + dates to calculate</div><div class="bf-tn" id="bfBreak"></div></div>
         <div class="bf-tv" id="bfTotal">Ksh —</div>
       </div>
       <button class="bf-sub" onclick="submitBook()">Send Booking Request via WhatsApp &#8599;</button>
-      <p class="bf-note">Free cancellation up to 48hrs before arrival &middot; 30% deposit confirms booking &middot; Balance due on arrival</p>
+      <p class="bf-note">Free cancellation up to 48hrs before arrival &middot; 30% deposit confirms booking</p>
     </div>
   </div>
 </div>
@@ -914,10 +651,10 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
     <div class="mist-side">
       <div class="at-tag">Our Story</div>
       <h2 class="at-h">A ranch that breathes<br><i>with the land</i></h2>
-      <p class="at-p">Loisoi Ranch and Resort sits on 50 acres of untouched highland wilderness in Nanyuki, at the foothills of Mount Kenya. Our traditional thatched cottages and unique rock cave suite are hidden within lush bush.</p>
+      <p class="at-p">Loisoi Ranch and Resort sits on 50 acres of untouched highland wilderness in Nanyuki, at the foothills of Mount Kenya.</p>
       <p class="at-p">We blend the heritage of a Kenyan ranch with the warmth of modern luxury — for guests who want more than just a bed.</p>
       <div class="at-vals">
-        <div class="av"><div class="av-t">Location</div><div class="av-v">Nanyuki · Mt Kenya Foothills</div></div>
+        <div class="av"><div class="av-t">Location</div><div class="av-v">Nanyuki &middot; Mt Kenya Foothills</div></div>
         <div class="av"><div class="av-t">Property</div><div class="av-v">50 Acres of Wilderness</div></div>
         <div class="av"><div class="av-t">Rooms</div><div class="av-v">9 Unique Room Types</div></div>
         <div class="av"><div class="av-t">Contact</div><div class="av-v">+254 743 365 765</div></div>
@@ -941,57 +678,19 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
 <a class="wa" href="https://wa.me/254743365765" target="_blank" title="WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
 const ROOMS=[
-  {cat:'Glamping · Most Popular',name:'Luxury Safari Tent',sleeps:'2 Guests',from:'Ksh 8,000/night',type:'Luxury Tent',
-   desc:'Safari-style ensuite tent with open-air deck, private outdoor shower, and sweeping highland views. Fall asleep to the sounds of nature on 50 pristine acres.',
-   feats:['Ensuite Bathroom','Private Deck','Mountain Views','Double Bed'],
-   pkgs:[{label:'Single B&B',rate:8000},{label:'Double B&B',rate:10000},{label:'Half Board (Single)',rate:10000},{label:'Half Board (Double)',rate:12000},{label:'Full Board (Single)',rate:12000},{label:'Full Board (Double)',rate:15000}],
-   imgs:['https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=900&q=80','https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=900&q=80','https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=900&q=80']},
-  {cat:'Cottage · 1 Bedroom',name:'Kifaru Cottage',sleeps:'2 Guests',from:'Ksh 8,000/night',type:'Standalone Cottage',
-   desc:'Private veranda with sweeping savanna views, stone fireplace, and handcrafted wooden furnishings.',
-   feats:['Private Veranda','Stone Fireplace','Ensuite Bathroom','Kitchenette'],
-   pkgs:[{label:'Single B&B',rate:8000},{label:'Double B&B',rate:10000},{label:'Half Board (Single)',rate:10000},{label:'Half Board (Double)',rate:12000},{label:'Full Board (Single)',rate:12000},{label:'Full Board (Double)',rate:15000}],
-   imgs:['https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=900&q=80','https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=900&q=80','https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=900&q=80']},
-  {cat:'Suite · Executive',name:'Executive Room',sleeps:'2 Guests',from:'Ksh 10,000/night',type:'Executive Suite',
-   desc:'High-end finishes, extra space, and premium amenities for guests who appreciate the finer things.',
-   feats:['King Bed','Premium Finishes','Work Desk','Rain Shower'],
-   pkgs:[{label:'Single B&B',rate:8000},{label:'Double B&B',rate:10000},{label:'Half Board (Single)',rate:10000},{label:'Half Board (Double)',rate:12000},{label:'Full Board (Single)',rate:12000},{label:'Full Board (Double)',rate:15000}],
-   imgs:['https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=900&q=80','https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=900&q=80','https://images.unsplash.com/photo-1600011689032-8b628b8a8747?w=900&q=80']},
-  {cat:'Suite · 4 Bedrooms',name:'Africana Suite',sleeps:'Up to 8 Guests',from:'Ksh 8,000/person',type:'4-Bedroom Suite',
-   desc:'Traditional African craftsmanship with hand-carved furniture, woven textiles, and local artwork.',
-   feats:['4 Bedrooms','Lounge Area','African Décor','Family-Friendly'],
-   pkgs:[{label:'Single B&B',rate:8000},{label:'Double B&B',rate:10000},{label:'Half Board (Single)',rate:10000},{label:'Half Board (Double)',rate:12000},{label:'Full Board (Single)',rate:12000},{label:'Full Board (Double)',rate:15000}],
-   imgs:['https://images.unsplash.com/photo-1602002418082-a4443e081dd1?w=900&q=80','https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=900&q=80','https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=900&q=80']},
-  {cat:'Room · Swahili Style',name:'Makuti Room',sleeps:'2 Guests',from:'Ksh 8,000/night',type:'Makuti Room',
-   desc:'Traditional palm-thatched roofing brings Swahili coast charm to the highlands.',
-   feats:['Makuti Roofing','Ensuite Bathroom','Double Bed','Garden View'],
-   pkgs:[{label:'Single B&B',rate:8000},{label:'Double B&B',rate:10000},{label:'Half Board (Single)',rate:10000},{label:'Half Board (Double)',rate:12000},{label:'Full Board (Single)',rate:12000},{label:'Full Board (Double)',rate:15000}],
-   imgs:['https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=900&q=80','https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900&q=80','https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=900&q=80']},
-  {cat:'Cottage · 2 Bedrooms',name:'Cottage Vintage',sleeps:'Up to 4 Guests',from:'Ksh 8,000/night',type:'Vintage Cottage',
-   desc:'Antique safari memorabilia adorns the walls while modern conveniences ensure 21st-century comfort.',
-   feats:['2 Bedrooms','Safari Décor','Vintage Furnishings','Ensuite Bathrooms'],
-   pkgs:[{label:'Single B&B',rate:8000},{label:'Double B&B',rate:10000},{label:'Half Board (Single)',rate:10000},{label:'Half Board (Double)',rate:12000},{label:'Full Board (Single)',rate:12000},{label:'Full Board (Double)',rate:15000}],
-   imgs:['https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=900&q=80','https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=900&q=80','https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=900&q=80']},
-  {cat:'Room · Deluxe',name:'Deluxe Room',sleeps:'2 Guests',from:'Ksh 8,000/night',type:'Deluxe Room',
-   desc:'Modern décor combined with the peaceful surroundings of the ranch.',
-   feats:['Ensuite Bathroom','Double Bed','Modern Décor','Ranch Views'],
-   pkgs:[{label:'Single B&B',rate:8000},{label:'Double B&B',rate:10000},{label:'Half Board (Single)',rate:10000},{label:'Half Board (Double)',rate:12000},{label:'Full Board (Single)',rate:12000},{label:'Full Board (Double)',rate:15000}],
-   imgs:['https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=900&q=80','https://images.unsplash.com/photo-1600011689032-8b628b8a8747?w=900&q=80','https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=900&q=80']},
-  {cat:'Cottage · 1 Bedroom',name:'Cottage Classic',sleeps:'2 Guests',from:'Ksh 8,000/night',type:'Classic Cottage',
-   desc:'Classic safari aesthetics with discreet modern comforts in a 1-bedroom standalone cottage.',
-   feats:['Private Garden','Ensuite Bathroom','Classic Furnishings','Double Bed'],
-   pkgs:[{label:'Single B&B',rate:8000},{label:'Double B&B',rate:10000},{label:'Half Board (Single)',rate:10000},{label:'Half Board (Double)',rate:12000},{label:'Full Board (Single)',rate:12000},{label:'Full Board (Double)',rate:15000}],
-   imgs:['https://images.unsplash.com/photo-1600011689032-8b628b8a8747?w=900&q=80','https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=900&q=80','https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=900&q=80']},
-  {cat:'Cottage · 2 Bedrooms',name:'Cottage Fig Tree',sleeps:'Up to 4 Guests',from:'Ksh 8,000/night',type:'Fig Tree Cottage',
-   desc:'Nestled under a majestic fig tree with garden views and safari-inspired interiors.',
-   feats:['2 Bedrooms','Garden Views','Fig Tree Setting','Ensuite Bathrooms'],
-   pkgs:[{label:'Single B&B',rate:8000},{label:'Double B&B',rate:10000},{label:'Half Board (Single)',rate:10000},{label:'Half Board (Double)',rate:12000},{label:'Full Board (Single)',rate:12000},{label:'Full Board (Double)',rate:15000}],
-   imgs:['https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=900&q=80','https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900&q=80','https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=900&q=80']}
+  {cat:'Glamping · Most Popular',name:'Luxury Safari Tent',sleeps:'2 Guests',from:'Ksh 8,000/night',type:'Luxury Tent',desc:'Safari-style ensuite tent with open-air deck, private outdoor shower, and sweeping highland views.',feats:['Ensuite Bathroom','Private Deck','Mountain Views','Double Bed'],pkgs:[{label:'Single B&B',rate:8000},{label:'Double B&B',rate:10000},{label:'Half Board (Single)',rate:10000},{label:'Half Board (Double)',rate:12000},{label:'Full Board (Single)',rate:12000},{label:'Full Board (Double)',rate:15000}],imgs:['https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=900&q=80','https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=900&q=80','https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=900&q=80']},
+  {cat:'Cottage · 1 Bedroom',name:'Kifaru Cottage',sleeps:'2 Guests',from:'Ksh 8,000/night',type:'Standalone Cottage',desc:'Private veranda with sweeping savanna views, stone fireplace, and handcrafted wooden furnishings.',feats:['Private Veranda','Stone Fireplace','Ensuite Bathroom','Kitchenette'],pkgs:[{label:'Single B&B',rate:8000},{label:'Double B&B',rate:10000},{label:'Half Board (Single)',rate:10000},{label:'Half Board (Double)',rate:12000},{label:'Full Board (Single)',rate:12000},{label:'Full Board (Double)',rate:15000}],imgs:['https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=900&q=80','https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=900&q=80','https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=900&q=80']},
+  {cat:'Suite · Executive',name:'Executive Room',sleeps:'2 Guests',from:'Ksh 10,000/night',type:'Executive Suite',desc:'High-end finishes, extra space, and premium amenities for guests who appreciate the finer things.',feats:['King Bed','Premium Finishes','Work Desk','Rain Shower'],pkgs:[{label:'Single B&B',rate:8000},{label:'Double B&B',rate:10000},{label:'Half Board (Single)',rate:10000},{label:'Half Board (Double)',rate:12000},{label:'Full Board (Single)',rate:12000},{label:'Full Board (Double)',rate:15000}],imgs:['https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=900&q=80','https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=900&q=80','https://images.unsplash.com/photo-1600011689032-8b628b8a8747?w=900&q=80']},
+  {cat:'Suite · 4 Bedrooms',name:'Africana Suite',sleeps:'Up to 8 Guests',from:'Ksh 8,000/person',type:'4-Bedroom Suite',desc:'Traditional African craftsmanship with hand-carved furniture, woven textiles, and local artwork.',feats:['4 Bedrooms','Lounge Area','African Décor','Family-Friendly'],pkgs:[{label:'Single B&B',rate:8000},{label:'Double B&B',rate:10000},{label:'Half Board (Single)',rate:10000},{label:'Half Board (Double)',rate:12000},{label:'Full Board (Single)',rate:12000},{label:'Full Board (Double)',rate:15000}],imgs:['https://images.unsplash.com/photo-1602002418082-a4443e081dd1?w=900&q=80','https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=900&q=80','https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=900&q=80']},
+  {cat:'Room · Swahili Style',name:'Makuti Room',sleeps:'2 Guests',from:'Ksh 8,000/night',type:'Makuti Room',desc:'Traditional palm-thatched roofing brings Swahili coast charm to the highlands.',feats:['Makuti Roofing','Ensuite Bathroom','Double Bed','Garden View'],pkgs:[{label:'Single B&B',rate:8000},{label:'Double B&B',rate:10000},{label:'Half Board (Single)',rate:10000},{label:'Half Board (Double)',rate:12000},{label:'Full Board (Single)',rate:12000},{label:'Full Board (Double)',rate:15000}],imgs:['https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=900&q=80','https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900&q=80','https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=900&q=80']},
+  {cat:'Cottage · 2 Bedrooms',name:'Cottage Vintage',sleeps:'Up to 4 Guests',from:'Ksh 8,000/night',type:'Vintage Cottage',desc:'Antique safari memorabilia adorns the walls while modern conveniences ensure comfort.',feats:['2 Bedrooms','Safari Décor','Vintage Furnishings','Ensuite Bathrooms'],pkgs:[{label:'Single B&B',rate:8000},{label:'Double B&B',rate:10000},{label:'Half Board (Single)',rate:10000},{label:'Half Board (Double)',rate:12000},{label:'Full Board (Single)',rate:12000},{label:'Full Board (Double)',rate:15000}],imgs:['https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=900&q=80','https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=900&q=80','https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=900&q=80']},
+  {cat:'Room · Deluxe',name:'Deluxe Room',sleeps:'2 Guests',from:'Ksh 8,000/night',type:'Deluxe Room',desc:'Modern décor combined with the peaceful surroundings of the ranch.',feats:['Ensuite Bathroom','Double Bed','Modern Décor','Ranch Views'],pkgs:[{label:'Single B&B',rate:8000},{label:'Double B&B',rate:10000},{label:'Half Board (Single)',rate:10000},{label:'Half Board (Double)',rate:12000},{label:'Full Board (Single)',rate:12000},{label:'Full Board (Double)',rate:15000}],imgs:['https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=900&q=80','https://images.unsplash.com/photo-1600011689032-8b628b8a8747?w=900&q=80','https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=900&q=80']},
+  {cat:'Cottage · 1 Bedroom',name:'Cottage Classic',sleeps:'2 Guests',from:'Ksh 8,000/night',type:'Classic Cottage',desc:'Classic safari aesthetics with discreet modern comforts.',feats:['Private Garden','Ensuite Bathroom','Classic Furnishings','Double Bed'],pkgs:[{label:'Single B&B',rate:8000},{label:'Double B&B',rate:10000},{label:'Half Board (Single)',rate:10000},{label:'Half Board (Double)',rate:12000},{label:'Full Board (Single)',rate:12000},{label:'Full Board (Double)',rate:15000}],imgs:['https://images.unsplash.com/photo-1600011689032-8b628b8a8747?w=900&q=80','https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=900&q=80','https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=900&q=80']},
+  {cat:'Cottage · 2 Bedrooms',name:'Cottage Fig Tree',sleeps:'Up to 4 Guests',from:'Ksh 8,000/night',type:'Fig Tree Cottage',desc:'Nestled under a majestic fig tree with garden views and safari-inspired interiors.',feats:['2 Bedrooms','Garden Views','Fig Tree Setting','Ensuite Bathrooms'],pkgs:[{label:'Single B&B',rate:8000},{label:'Double B&B',rate:10000},{label:'Half Board (Single)',rate:10000},{label:'Half Board (Double)',rate:12000},{label:'Full Board (Single)',rate:12000},{label:'Full Board (Double)',rate:15000}],imgs:['https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=900&q=80','https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900&q=80','https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=900&q=80']}
 ];
-
 const GAL=[
   {src:'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1400&q=85',cat:'grounds',name:'Aerial view of the resort'},
   {src:'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1400&q=85',cat:'grounds',name:'Swimming pool area'},
@@ -1005,7 +704,6 @@ const GAL=[
   {src:'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1400&q=85',cat:'wildlife',name:'Wildlife on the ranch'},
   {src:'https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=1400&q=85',cat:'wildlife',name:'Safari wildlife experience'}
 ];
-
 const MENU=[
   {cat:'breakfast',name:'Full English Breakfast',desc:'Eggs, sausage, beans, toast & juice',price:'Ksh 950',img:'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=800&q=80'},
   {cat:'breakfast',name:'Kenyan Mandazi & Chai',desc:'Traditional spiced tea with mandazi',price:'Ksh 350',img:'https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=800&q=80'},
@@ -1019,149 +717,23 @@ const MENU=[
   {cat:'drinks',name:'Tusker / White Cap',desc:'Cold Kenyan lager, served ice cold',price:'Ksh 400',img:'https://images.unsplash.com/photo-1608270586620-248524c67de9?w=800&q=80'},
   {cat:'drinks',name:'Arabica Coffee',desc:'Kenyan single-origin, French press',price:'Ksh 280',img:'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80'}
 ];
-
-// SWIPERS
 let heroSw,rdSw,galSw,menuSw;
-
-function startHero(){
-  if(heroSw)return;
-  heroSw=new Swiper('#heroSw',{loop:true,speed:1100,autoplay:{delay:4500,disableOnInteraction:false,pauseOnMouseEnter:true},navigation:{nextEl:'#home .swiper-button-next',prevEl:'#home .swiper-button-prev'},pagination:{el:'#home .swiper-pagination',clickable:true}});
-}
-
-function startRd(imgs){
-  document.getElementById('rdSlides').innerHTML=imgs.map(s=>`<div class="swiper-slide"><img src="${s}" alt="Room"></div>`).join('');
-  if(rdSw)rdSw.destroy(true,true);
-  rdSw=new Swiper('#rdSw',{loop:imgs.length>1,autoplay:{delay:3500,disableOnInteraction:false},speed:700,navigation:{nextEl:'#rooms .swiper-button-next',prevEl:'#rooms .swiper-button-prev'},pagination:{el:'#rooms .swiper-pagination',clickable:true}});
-}
-
-function startGal(photos){
-  document.getElementById('galSlides').innerHTML=photos.map(p=>`<div class="swiper-slide"><img src="${p.src}" alt="${p.name}"></div>`).join('');
-  document.getElementById('galThumbs').innerHTML=photos.map((p,i)=>`<div class="gth${i===0?' on':''}" onclick="jumpGal(${i})"><img src="${p.src}" alt="${p.name}"></div>`).join('');
-  if(galSw)galSw.destroy(true,true);
-  galSw=new Swiper('#galSw',{loop:photos.length>1,autoplay:{delay:3800,disableOnInteraction:false,pauseOnMouseEnter:true},speed:800,navigation:{nextEl:'#gallery .swiper-button-next',prevEl:'#gallery .swiper-button-prev'},pagination:{el:'#gallery .swiper-pagination',clickable:true},on:{slideChange(){upGal(this,photos);}}});
-  upGal(galSw,photos);
-}
-
-function upGal(sw,photos){
-  const i=sw.realIndex;
-  if(!photos[i])return;
-  document.getElementById('galCatLbl').textContent=photos[i].cat.charAt(0).toUpperCase()+photos[i].cat.slice(1);
-  document.getElementById('galNameLbl').textContent=photos[i].name;
-  document.getElementById('galCnt').textContent=(i+1)+' / '+photos.length;
-  document.querySelectorAll('.gth').forEach((t,j)=>t.classList.toggle('on',j===i));
-}
-
+function startHero(){if(heroSw)return;heroSw=new Swiper('#heroSw',{loop:true,speed:1100,autoplay:{delay:4500,disableOnInteraction:false,pauseOnMouseEnter:true},navigation:{nextEl:'#home .swiper-button-next',prevEl:'#home .swiper-button-prev'},pagination:{el:'#home .swiper-pagination',clickable:true}});}
+function startRd(imgs){document.getElementById('rdSlides').innerHTML=imgs.map(s=>`<div class="swiper-slide"><img src="${s}" alt="Room"></div>`).join('');if(rdSw)rdSw.destroy(true,true);rdSw=new Swiper('#rdSw',{loop:imgs.length>1,autoplay:{delay:3500,disableOnInteraction:false},speed:700,navigation:{nextEl:'#rooms .swiper-button-next',prevEl:'#rooms .swiper-button-prev'},pagination:{el:'#rooms .swiper-pagination',clickable:true}});}
+function startGal(photos){document.getElementById('galSlides').innerHTML=photos.map(p=>`<div class="swiper-slide"><img src="${p.src}" alt="${p.name}"></div>`).join('');document.getElementById('galThumbs').innerHTML=photos.map((p,i)=>`<div class="gth${i===0?' on':''}" onclick="jumpGal(${i})"><img src="${p.src}" alt="${p.name}"></div>`).join('');if(galSw)galSw.destroy(true,true);galSw=new Swiper('#galSw',{loop:photos.length>1,autoplay:{delay:3800,disableOnInteraction:false,pauseOnMouseEnter:true},speed:800,navigation:{nextEl:'#gallery .swiper-button-next',prevEl:'#gallery .swiper-button-prev'},pagination:{el:'#gallery .swiper-pagination',clickable:true},on:{slideChange(){upGal(this,photos);}}});upGal(galSw,photos);}
+function upGal(sw,photos){const i=sw.realIndex;if(!photos[i])return;document.getElementById('galCatLbl').textContent=photos[i].cat.charAt(0).toUpperCase()+photos[i].cat.slice(1);document.getElementById('galNameLbl').textContent=photos[i].name;document.getElementById('galCnt').textContent=(i+1)+' / '+photos.length;document.querySelectorAll('.gth').forEach((t,j)=>t.classList.toggle('on',j===i));}
 function jumpGal(i){if(galSw)galSw.slideToLoop(i);}
-
-function startMenu(items){
-  document.getElementById('menuSlides').innerHTML=items.map(item=>`
-    <div class="swiper-slide" style="position:relative;">
-      <img src="${item.img}" alt="${item.name}" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.58);">
-      <div class="msl-info"><div class="msl-cat">${item.cat.charAt(0).toUpperCase()+item.cat.slice(1)}</div><div class="msl-n">${item.name}</div><div class="msl-d">${item.desc}</div></div>
-      <div class="msl-price">${item.price}</div>
-    </div>`).join('');
-  if(menuSw)menuSw.destroy(true,true);
-  menuSw=new Swiper('#menuSw',{loop:items.length>1,autoplay:{delay:3200,disableOnInteraction:false,pauseOnMouseEnter:true},speed:800,navigation:{nextEl:'#menu .swiper-button-next',prevEl:'#menu .swiper-button-prev'},pagination:{el:'#menu .swiper-pagination',clickable:true}});
-  renderMenuList(items);
-}
-
-function renderMenuList(items){
-  const cats=[...new Set(items.map(i=>i.cat))];
-  const lbl={breakfast:'Breakfast',mains:'Lunch & Dinner',drinks:'Drinks & Bar'};
-  document.getElementById('menuItems').innerHTML=cats.map(c=>`
-    <div class="msec">${lbl[c]||c}</div>
-    ${items.filter(i=>i.cat===c).map(item=>`
-      <div class="mrow" onclick="jumpMenu(${MENU.indexOf(item)})">
-        <div><div class="mn">${item.name}</div><div class="md">${item.desc}</div></div>
-        <div class="mp">${item.price}</div>
-      </div>`).join('')}`).join('');
-}
-
+function startMenu(items){document.getElementById('menuSlides').innerHTML=items.map(item=>`<div class="swiper-slide" style="position:relative;"><img src="${item.img}" alt="${item.name}" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.58);"><div class="msl-info"><div class="msl-cat">${item.cat.charAt(0).toUpperCase()+item.cat.slice(1)}</div><div class="msl-n">${item.name}</div><div class="msl-d">${item.desc}</div></div><div class="msl-price">${item.price}</div></div>`).join('');if(menuSw)menuSw.destroy(true,true);menuSw=new Swiper('#menuSw',{loop:items.length>1,autoplay:{delay:3200,disableOnInteraction:false,pauseOnMouseEnter:true},speed:800,navigation:{nextEl:'#menu .swiper-button-next',prevEl:'#menu .swiper-button-prev'},pagination:{el:'#menu .swiper-pagination',clickable:true}});renderMenuList(items);}
+function renderMenuList(items){const cats=[...new Set(items.map(i=>i.cat))];const lbl={breakfast:'Breakfast',mains:'Lunch & Dinner',drinks:'Drinks & Bar'};document.getElementById('menuItems').innerHTML=cats.map(c=>`<div class="msec">${lbl[c]||c}</div>${items.filter(i=>i.cat===c).map(item=>`<div class="mrow" onclick="jumpMenu(${MENU.indexOf(item)})"><div><div class="mn">${item.name}</div><div class="md">${item.desc}</div></div><div class="mp">${item.price}</div></div>`).join('')}`).join('');}
 function jumpMenu(i){if(menuSw)menuSw.slideToLoop(i);}
-
-// ROOMS
-function pickRoom(i,el){
-  document.querySelectorAll('.ri').forEach(r=>r.classList.remove('on'));
-  el.classList.add('on');
-  const r=ROOMS[i];
-  document.getElementById('rdCat').textContent=r.cat;
-  document.getElementById('rdName').textContent=r.name;
-  document.getElementById('rdSleeps').textContent=r.sleeps;
-  document.getElementById('rdFrom').textContent=r.from;
-  document.getElementById('rdType').textContent=r.type;
-  document.getElementById('rdDesc').textContent=r.desc;
-  document.getElementById('rdFeats').innerHTML=r.feats.map(f=>`<span class="feat">${f}</span>`).join('');
-  document.getElementById('rdTot').textContent='Ksh —';
-  document.getElementById('rdIn').value='';
-  document.getElementById('rdOut').value='';
-  startRd(r.imgs);
-}
-
-
-
-function loadBfPkgs(){
-  const ri=document.getElementById('bfRoom').value;
-  const sel=document.getElementById('bfPkg');
-  if(ri===''){sel.innerHTML='<option value="">Select room first</option>';return;}
-  const r=ROOMS[parseInt(ri)];
-  sel.innerHTML='<option value="">Select a package</option>'+r.pkgs.map(p=>`<option value="${p.rate}">${p.label} — Ksh ${p.rate.toLocaleString()}/night</option>`).join('');
-  calcBf();
-}
-function calcBf(){
-  const rate=parseInt(document.getElementById('bfPkg').value)||0;
-  const a=document.getElementById('bfIn').value,d=document.getElementById('bfOut').value;
-  const tv=document.getElementById('bfTotal'),tn=document.getElementById('bfNights'),tb=document.getElementById('bfBreak');
-  if(rate&&a&&d){
-    const n=Math.round((new Date(d)-new Date(a))/86400000);
-    if(n>0){
-      const s=document.getElementById('bfPkg');
-      tv.textContent='Ksh '+(n*rate).toLocaleString();
-      const rSel=document.getElementById('bfRoom');
-      const rName=rSel.value!==''?ROOMS[parseInt(rSel.value)].name+' · ':'';
-      tn.textContent=n+' night'+(n>1?'s':'')+' · '+rName+s.options[s.selectedIndex].text.split('—')[0].trim();
-      tb.textContent='Deposit (30%): Ksh '+Math.round(n*rate*0.3).toLocaleString()+' · Balance: Ksh '+Math.round(n*rate*0.7).toLocaleString();
-    } else {tv.textContent='Check dates';tn.textContent='Departure must be after arrival';tb.textContent='';}
-  } else {tn.textContent='Select package + dates to calculate';tb.textContent='';}
-}
-
-function submitBook(){
-  const inputs=document.querySelectorAll('.bf-i');
-  const name=inputs[0].value,phone=inputs[1].value;
-  if(!name||!phone){alert('Please enter your name and phone number.');return;}
-  const total=document.getElementById('bfTotal').textContent;
-  const nights=document.getElementById('bfNights').textContent;
-  const msg=encodeURIComponent('Hello Loisoi Ranch & Resort,\n\nBooking Request:\nName: '+name+'\nPhone: '+phone+'\n'+nights+'\nTotal: '+total+'\n\nPlease confirm availability. Thank you!');
-  window.open('https://wa.me/254743365765?text='+msg,'_blank');
-}
-
-function fillEvent(type){
-  document.getElementById('evType').value=type;
-  document.querySelector('.ev-form-wrap').scrollIntoView({behavior:'smooth'});
-}
-
-function submitEvent(){
-  const inputs=document.querySelectorAll('.ef-input');
-  const name=inputs[0].value,phone=inputs[1].value;
-  if(!name||!phone){alert('Please enter your name and phone number.');return;}
-  const type=document.getElementById('evType').value;
-  const msg=encodeURIComponent('Hello Loisoi Ranch & Resort,\n\nEvent Enquiry:\nName: '+name+'\nPhone: '+phone+'\nEvent: '+type+'\n\nPlease get back to me. Thank you!');
-  window.open('https://wa.me/254743365765?text='+msg,'_blank');
-}
-
-function filterGal(cat,el){
-  document.querySelectorAll('.gcat').forEach(b=>b.classList.remove('on'));
-  el.classList.add('on');
-  startGal(cat==='all'?GAL:GAL.filter(p=>p.cat===cat));
-}
-
-function filterMenu(cat,el){
-  document.querySelectorAll('.mf').forEach(b=>b.classList.remove('on'));
-  el.classList.add('on');
-  const items=cat==='all'?MENU:MENU.filter(i=>i.cat===cat);
-  startMenu(items);
-}
-
-// TAB SWITCHING
+function pickRoom(i,el){document.querySelectorAll('.ri').forEach(r=>r.classList.remove('on'));el.classList.add('on');const r=ROOMS[i];document.getElementById('rdCat').textContent=r.cat;document.getElementById('rdName').textContent=r.name;document.getElementById('rdSleeps').textContent=r.sleeps;document.getElementById('rdFrom').textContent=r.from;document.getElementById('rdType').textContent=r.type;document.getElementById('rdDesc').textContent=r.desc;document.getElementById('rdFeats').innerHTML=r.feats.map(f=>`<span class="feat">${f}</span>`).join('');startRd(r.imgs);}
+function loadBfPkgs(){const ri=document.getElementById('bfRoom').value;const sel=document.getElementById('bfPkg');if(ri===''){sel.innerHTML='<option value="">Select room first</option>';return;}const r=ROOMS[parseInt(ri)];sel.innerHTML='<option value="">Select a package</option>'+r.pkgs.map(p=>`<option value="${p.rate}">${p.label} — Ksh ${p.rate.toLocaleString()}/night</option>`).join('');calcBf();}
+function calcBf(){const rate=parseInt(document.getElementById('bfPkg').value)||0;const a=document.getElementById('bfIn').value,d=document.getElementById('bfOut').value;const tv=document.getElementById('bfTotal'),tn=document.getElementById('bfNights'),tb=document.getElementById('bfBreak');if(rate&&a&&d){const n=Math.round((new Date(d)-new Date(a))/86400000);if(n>0){const s=document.getElementById('bfPkg');const rSel=document.getElementById('bfRoom');const rName=rSel.value!==''?ROOMS[parseInt(rSel.value)].name+' · ':'';tv.textContent='Ksh '+(n*rate).toLocaleString();tn.textContent=n+' night'+(n>1?'s':'')+' · '+rName+s.options[s.selectedIndex].text.split('—')[0].trim();tb.textContent='Deposit (30%): Ksh '+Math.round(n*rate*0.3).toLocaleString()+' · Balance: Ksh '+Math.round(n*rate*0.7).toLocaleString();}else{tv.textContent='Check dates';tn.textContent='Departure must be after arrival';tb.textContent='';}}else{tn.textContent='Select package + dates to calculate';tb.textContent='';}}
+function submitBook(){const inputs=document.querySelectorAll('.bf-i');const name=inputs[0].value,phone=inputs[1].value;if(!name||!phone){alert('Please enter your name and phone number.');return;}const total=document.getElementById('bfTotal').textContent;const nights=document.getElementById('bfNights').textContent;const msg=encodeURIComponent('Hello Loisoi Ranch & Resort,\n\nBooking Request:\nName: '+name+'\nPhone: '+phone+'\n'+nights+'\nTotal: '+total+'\n\nPlease confirm availability. Thank you!');window.open('https://wa.me/254743365765?text='+msg,'_blank');}
+function fillEvent(type){document.getElementById('evType').value=type;document.querySelector('.ev-form-wrap').scrollIntoView({behavior:'smooth'});}
+function submitEvent(){const inputs=document.querySelectorAll('.ef-input');const name=inputs[0].value,phone=inputs[1].value;if(!name||!phone){alert('Please enter your name and phone number.');return;}const type=document.getElementById('evType').value;const msg=encodeURIComponent('Hello Loisoi Ranch & Resort,\n\nEvent Enquiry:\nName: '+name+'\nPhone: '+phone+'\nEvent: '+type+'\n\nPlease get back to me. Thank you!');window.open('https://wa.me/254743365765?text='+msg,'_blank');}
+function filterGal(cat,el){document.querySelectorAll('.gcat').forEach(b=>b.classList.remove('on'));el.classList.add('on');startGal(cat==='all'?GAL:GAL.filter(p=>p.cat===cat));}
+function filterMenu(cat,el){document.querySelectorAll('.mf').forEach(b=>b.classList.remove('on'));el.classList.add('on');const items=cat==='all'?MENU:MENU.filter(i=>i.cat===cat);startMenu(items);}
 function go(id){
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
   document.querySelectorAll('.pane').forEach(p=>p.classList.remove('on'));
@@ -1175,15 +747,13 @@ function go(id){
   if(id==='home')startHero();
   if(id==='rooms'){
     startRd(ROOMS[0].imgs);
-    const isMob = window.innerWidth <= 768;
-    const grid = document.querySelector('.mob-room-grid');
-    if(grid) grid.style.display = isMob ? 'grid' : 'none';
+    const isMob=window.innerWidth<=768;
+    const grid=document.querySelector('.mob-room-grid');
+    if(grid)grid.style.display=isMob?'grid':'none';
   }
   if(id==='gallery')startGal(GAL);
   if(id==='menu')startMenu(MENU);
 }
-
-// Boot
 window.addEventListener('DOMContentLoaded',function(){
   startHero();
   startRd(ROOMS[0].imgs);
