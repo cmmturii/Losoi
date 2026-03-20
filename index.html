@@ -1,3 +1,4 @@
+<!-- LOISOI v7 - Nav Top, Rooms Full Width, No Ratings - 21 Mar 2026 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -283,23 +284,22 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
 
 /* ===== MOBILE RESPONSIVE ===== */
 @media(max-width:768px){
-  /* NAV */
-  nav{padding:0 14px;height:54px;}
-  .logo{font-size:17px;}
-  .nav-tabs{display:none;}
-  .nav-btn{display:none;}
+  /* NAV - hide desktop nav on mobile, mob-nav replaces it */
+  nav{display:none!important;}
+  .mob-nav{height:54px;}
 
   /* Override desktop fixed layout for mobile */
   html,body{height:auto!important;overflow:auto!important;}
   body{display:block!important;}
-  .stage{height:auto!important;overflow:visible!important;padding-top:54px;}
+  .stage{height:auto!important;overflow:visible!important;padding-top:104px;}
   .pane{position:relative!important;inset:auto!important;display:none;}
-  .pane.on{display:block!important;}
+  .pane.on{display:block!important;padding-top:54px;}
 
   /* HOME */
   #home.on{display:block!important;}
-  .hero{height:calc(75vh - 50px);min-height:420px;}
-  .mob-stats{display:none!important;}
+  .hero{height:75vh;min-height:460px;}
+  .hero-stats{display:none!important;}
+  .mob-stats{display:flex!important;}
   .hero-txt{padding:0 22px 80px;}
   .hero-h1{font-size:clamp(32px,10vw,52px);}
   .hero-p{font-size:12px;max-width:100%;}
@@ -307,11 +307,6 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
   .pill{font-size:9px;padding:3px 8px;}
   .hero-btns{flex-direction:column;gap:8px;}
   .btn-g,.btn-o{width:100%;text-align:center;padding:12px;}
-  .hero-stats{display:none!important;}
-  .mob-stats{display:flex!important;}
-  .sv{font-size:20px;}
-  .sl{font-size:7px;}
-  /* Hide desktop stats overlay, show as bar instead */
   .hero-stats{display:none!important;}
   .infobar{flex-wrap:wrap;height:auto;padding:8px 0;}
   .ib{min-width:50%;border-right:none;border-bottom:0.5px solid rgba(196,149,42,0.1);padding:7px 14px;}
@@ -390,7 +385,7 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
   html,body{height:100%;overflow:hidden;}
 }
 /* Mobile nav base style */
-.mob-nav{position:fixed;top:0px;left:0;right:0;z-index:9998;background:#1C1409;border-bottom:0.5px solid rgba(196,149,42,0.25);height:50px;}
+.mob-nav{position:fixed;top:54px;left:0;right:0;z-index:9998;background:#1C1409;border-bottom:0.5px solid rgba(196,149,42,0.25);height:50px;}
 .mob-tab{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer;border:none;border-bottom:2px solid transparent;background:none;color:rgba(249,244,232,0.38);font-family:'Outfit',sans-serif;font-size:7px;letter-spacing:0.06em;text-transform:uppercase;transition:all 0.2s;padding:0 2px;}
 .mob-tab svg{width:19px;height:19px;transition:all 0.2s;}
 .mob-tab.on{color:var(--gold);border-bottom-color:var(--gold);}
@@ -465,7 +460,12 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
         <button class="btn-o" onclick="go('rooms')">Explore Rooms</button>
       </div>
     </div>
-    
+    <div class="hero-stats">
+      <div><div class="sv">50</div><div class="sl">Acres</div></div>
+      <div><div class="sv">9</div><div class="sl">Room Types</div></div>
+      <div><div class="sv">500+</div><div class="sl">Happy Guests</div></div>
+    </div>
+  </div>
   <div class="infobar">
     <div class="ib"><div class="ib-l">Location</div><div class="ib-v">Loisoi Ranch Road, Nanyuki, Kenya</div></div>
     <div class="ib"><div class="ib-l">Phone &amp; WhatsApp</div><div class="ib-v">+254 743 365 765</div></div>
