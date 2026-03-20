@@ -292,15 +292,14 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
   /* Override desktop fixed layout for mobile */
   html,body{height:auto!important;overflow:auto!important;}
   body{display:block!important;}
-  .stage{height:auto!important;overflow:visible!important;padding-top:0px;}
+  .stage{height:auto!important;overflow:visible!important;padding-top:50px;}
   .pane{position:relative!important;inset:auto!important;display:none;}
   .pane.on{display:block!important;}
 
   /* HOME */
   #home.on{display:block!important;}
-  .hero{height:75vh;min-height:460px;margin-top:50px;}
-  .hero-stats{display:none!important;}
-  .mob-stats{display:flex!important;}
+  .hero{height:calc(75vh - 50px);min-height:420px;}
+  .mob-stats{display:none!important;}
   .hero-txt{padding:0 22px 80px;}
   .hero-h1{font-size:clamp(32px,10vw,52px);}
   .hero-p{font-size:12px;max-width:100%;}
@@ -466,12 +465,7 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
         <button class="btn-o" onclick="go('rooms')">Explore Rooms</button>
       </div>
     </div>
-    <div class="hero-stats">
-      <div><div class="sv">50</div><div class="sl">Acres</div></div>
-      <div><div class="sv">9</div><div class="sl">Room Types</div></div>
-      <div><div class="sv">500+</div><div class="sl">Happy Guests</div></div>
-    </div>
-  </div>
+    
   <div class="infobar">
     <div class="ib"><div class="ib-l">Location</div><div class="ib-v">Loisoi Ranch Road, Nanyuki, Kenya</div></div>
     <div class="ib"><div class="ib-l">Phone &amp; WhatsApp</div><div class="ib-v">+254 743 365 765</div></div>
