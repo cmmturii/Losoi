@@ -293,7 +293,7 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
   body{display:block!important;}
   .stage{height:auto!important;overflow:visible!important;padding-top:104px;}
   .pane{position:relative!important;inset:auto!important;display:none;}
-  .pane.on{display:block!important;padding-top:54px;}
+  .pane.on{display:block!important;}
 
   /* HOME */
   #home.on{display:block!important;}
@@ -385,7 +385,9 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
   html,body{height:100%;overflow:hidden;}
 }
 /* Mobile nav base style */
-.mob-nav{position:fixed;top:54px;left:0;right:0;z-index:9998;background:#1C1409;border-bottom:0.5px solid rgba(196,149,42,0.25);height:50px;}
+.mob-nav{position:fixed;top:0;left:0;right:0;z-index:9998;background:#1C1409;border-bottom:0.5px solid rgba(196,149,42,0.25);height:54px;display:none;align-items:center;padding:0 8px 0 16px;}
+.mob-logo{font-family:'Cormorant Garamond',serif;font-size:18px;color:#F9F4E8;white-space:nowrap;margin-right:auto;}
+.mob-logo b{color:#C4952A;}
 .mob-tab{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer;border:none;border-bottom:2px solid transparent;background:none;color:rgba(249,244,232,0.38);font-family:'Outfit',sans-serif;font-size:7px;letter-spacing:0.06em;text-transform:uppercase;transition:all 0.2s;padding:0 2px;}
 .mob-tab svg{width:19px;height:19px;transition:all 0.2s;}
 .mob-tab.on{color:var(--gold);border-bottom-color:var(--gold);}
@@ -411,6 +413,7 @@ nav{height:62px;background:var(--ink);display:flex;align-items:center;justify-co
 
 <!-- MOBILE BOTTOM NAV -->
 <div class="mob-nav">
+   <span class="mob-logo">Loisoi <b>Ranch</b></span>
   <button class="mob-tab on" onclick="go('home')">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l1 13 9 2 9-2 1-13z"/><path d="M12 2v20M2 7h20"/></svg>Home</button>
   <button class="mob-tab" onclick="go('rooms')">
