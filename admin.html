@@ -285,19 +285,103 @@ body{font-family:'Outfit',sans-serif;background:#F5F5F0;color:var(--ink);display
 
 /* ===== MOBILE RESPONSIVE — ADMIN ===== */
 @media(max-width:768px){
-  /* Layout */
-  html,body{overflow:auto;}
-  #topNav{padding:0 14px;height:54px;}
+  /* Override inline styles set by JS */
+  html,body{overflow:auto!important;height:auto!important;}
+  #topNav{padding:0 14px!important;height:54px;display:flex!important;}
+  #appBody{flex-direction:column!important;overflow:auto!important;height:auto!important;display:flex!important;}
   .tn-logo{font-size:14px;}
   .tn-badge{display:none;}
   .tn-role{display:none;}
   .tn-time{display:none;}
   .tn-user{font-size:11px;}
   .tn-logout{font-size:9px;padding:4px 8px;}
-  #appBody{flex-direction:column;overflow:auto;height:auto;}
 
-  /* Sidebar becomes top horizontal scrollable bar */
-  #sidebar{width:100%;min-width:0;height:auto;border-right:none;border-bottom:0.5px solid rgba(26,20,9,0.1);flex-direction:column;overflow:visible;}
+  /* Sidebar — full width horizontal scroll */
+  #sidebar{width:100%!important;min-width:0;height:auto;border-right:none;border-bottom:0.5px solid rgba(26,20,9,0.1);overflow-x:auto;overflow-y:hidden;display:flex!important;flex-direction:row;white-space:nowrap;-webkit-overflow-scrolling:touch;}
+  #sidebar .sb-section{display:inline-flex;flex-direction:row;align-items:center;gap:2px;padding:6px;vertical-align:top;border-bottom:none;}
+  #sidebar .sb-section-label{display:none;}
+  #sidebar .sb-footer{display:none;}
+  #sidebar .sb-item{display:inline-flex;flex-direction:row;white-space:nowrap;padding:8px 12px;gap:6px;border-left:none;border-bottom:2px solid transparent;font-size:11px;flex-shrink:0;}
+  #sidebar .sb-item.on{border-left:none!important;border-bottom-color:var(--gold);background:#FEF9EE;}
+  #sidebar .sb-icon{font-size:13px;}
+  #sidebar .sb-badge{font-size:8px;padding:1px 5px;}
+
+  /* Main content */
+  #main{padding:14px;overflow:auto;flex:1;}
+
+  /* Page headers */
+  .page-hd{flex-direction:column;gap:8px;align-items:flex-start;margin-bottom:12px;}
+  .page-title{font-size:16px;}
+  .page-sub{font-size:11px;}
+  .page-actions{display:flex;flex-wrap:wrap;gap:6px;width:100%;}
+  .page-actions button,.page-actions select{font-size:10px;padding:7px 10px;}
+
+  /* Stat cards — 2 columns */
+  .stats-row{grid-template-columns:1fr 1fr!important;gap:8px;margin-bottom:12px;}
+  .stat-card{padding:12px 14px;}
+  .sc-val{font-size:20px;}
+  .sc-label{font-size:9px;}
+
+  /* Tables — scrollable */
+  .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:12px;}
+  .tbl{min-width:580px;font-size:11px;}
+  .tbl th{font-size:8px;padding:7px 8px;}
+  .tbl td{padding:7px 8px;}
+  .tbl-action{font-size:9px;padding:3px 6px;margin-right:2px;}
+  .table-head{flex-wrap:wrap;gap:6px;padding:10px 14px;}
+  .table-title{font-size:12px;}
+
+  /* Search */
+  .search-bar{flex-direction:column;gap:6px;}
+  .search-input,.search-sel{width:100%;font-size:12px;}
+
+  /* Calendar */
+  .cal-wrap{padding:12px;overflow-x:auto;}
+  .cal-grid{min-width:500px;}
+  .cal-day{min-height:50px;padding:3px;}
+  .cal-day-num{font-size:9px;}
+  .cal-booking{font-size:7px;padding:1px 3px;}
+
+  /* Revenue */
+  .rev-grid{grid-template-columns:1fr!important;gap:10px;}
+  .bar-label{width:90px;font-size:10px;}
+  .bar-val{font-size:10px;min-width:60px;}
+
+  /* Reports grid */
+  [style*="repeat(3,1fr)"],[style*="repeat(auto-fit"]{grid-template-columns:1fr!important;}
+
+  /* Briefing */
+  .brief-grid{grid-template-columns:1fr!important;gap:10px;}
+
+  /* Modals */
+  .modal-bg{align-items:flex-end;}
+  .modal{width:100%;max-height:85vh;overflow-y:auto;}
+  .modal-row{grid-template-columns:1fr!important;}
+  .modal-field.full{grid-column:span 1!important;}
+  .modal-body{padding:14px;}
+
+  /* Invoice */
+  .inv-wrap{padding:14px;}
+  .inv-header{flex-direction:column;gap:8px;}
+  .inv-meta{text-align:left;}
+  .inv-parties{grid-template-columns:1fr!important;gap:8px;}
+  .inv-totals-box{width:100%;}
+
+  /* Guest cards */
+  .guest-card{flex-direction:column;gap:8px;}
+  .guest-actions{flex-wrap:wrap;}
+
+  /* Settings */
+  .settings-section{padding:14px;}
+  .ss-row{gap:10px;}
+
+  /* Notification */
+  .notif-panel{width:96vw;right:4px;}
+  .notif-popup{width:90vw;right:5vw;}
+
+  /* Broadcast */
+  [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;}
+}
   .sb-section{padding:6px 0 4px;}
   .sb-section-label{font-size:7px;padding:0 12px;margin-bottom:3px;}
   .sb-items-row{display:flex;overflow-x:auto;padding:0 8px 6px;gap:4px;-webkit-overflow-scrolling:touch;}
@@ -1221,9 +1305,11 @@ function doLogin(){
     return;
   }
   currentRole=role;
+  const isMobile = window.innerWidth <= 768;
   document.getElementById('loginScreen').style.display='none';
   document.getElementById('topNav').style.display='flex';
   document.getElementById('appBody').style.display='flex';
+  document.getElementById('appBody').style.flexDirection = isMobile ? 'column' : 'row';
   document.getElementById('tnUser').textContent=user.charAt(0).toUpperCase()+user.slice(1);
   document.getElementById('tnRole').textContent={admin:'Administrator',receptionist:'Receptionist'}[role];
   document.getElementById('sbUser').textContent=user.charAt(0).toUpperCase()+user.slice(1)+' ('+role+')';
